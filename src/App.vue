@@ -1,10 +1,11 @@
 <script setup>
+import wc3backgroundPath from '../src/assets/wallpaperflare.com_wallpaper.jpg'
 import VueLatestTable from '/lib/VueLatestTable.vue'
 const headers = [
     {
       text: 'Ranking',
       align: 'start',
-      filterable: false,
+      filterable: true,
       value: 'ranking'
     },
     { text: 'Name', value: 'name' },
@@ -39,29 +40,26 @@ const headers = [
 </script>
 
 <template>
+  <body class="logo" :style="{ backgroundImage: `url(${wc3backgroundPath})` }">
 <VueLatestTable
     :headers="headers" 
     :data="desserts" 
     :isSearchable="true" 
     searchPlaceholder="Search" 
     :footer="{
-      rowsPerPage: [ -1, 10, 20,30], // we only use the numbers, if there is a typo, we skip it. -1 means All
+      rowsPerPage: [ -1, 10, 25,50], // we only use the numbers, if there is a typo, we skip it. -1 means All
       allText: 'ALL' // for translation purposes
     }"
     :defaultTheme="true"
     noData="Sorry, there is no data to show for now..." 
     rowsPerPageText="Rows per page" 
   />
+  </body>
 </template>
 
 <style scoped>
-  #vueLatestTable {
-    /* we can implement some CSS for this "Vue Latest Table" here */
-    margin: 0 auto;
-    margin-top: 30px;
-
-    .searchBox {
-      color: #333 !important;
-    }
-  }
+.logo {
+  height: 100%;
+  width: 100%;
+}
 </style>

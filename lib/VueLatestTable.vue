@@ -198,6 +198,7 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 #vueLatestTable {
+  font-family: Quadrata;
   display: block;
   width: 100%;
   padding: 10px;
@@ -225,7 +226,7 @@ onBeforeMount(() => {
     border-spacing: 0;
 
     th {
-      text-align: left;
+      text-align: center;
       padding: 5px 10px;
     }
 
