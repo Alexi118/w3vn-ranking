@@ -215,9 +215,8 @@ onBeforeMount(() => {
       padding: 10px 10px;
     }
     .searchBox {
-      flex-grow: 1;
       display: block;
-      width: calc(100% - 20px);
+      width: 30%;
       padding: 10px 10px;
     }
   }

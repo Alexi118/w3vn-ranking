@@ -1,19 +1,15 @@
 <script setup>
 import VueLatestTable from '/lib/VueLatestTable.vue'
 const headers = [
-    {
-      text: 'No',
-      value: 'ranking'
-    },
+    { text: 'Rank',value: 'ranking'},
     { text: 'Name', value: 'name' },
     { text: 'Race', value: 'race' },
     { text: 'MMR', value: 'mmr' },
-    { text: 'Rank', value: 'league' },
+    { text: 'League', value: 'league' },
     { text: 'W/L(%)', value: 'winrate' },
     { text: 'W', value: 'win' },
     { text: 'L', value: 'lose' },
     { text: 'Zalo', value: 'social' },
-
   ]
   const desserts = [
   {ranking:1,name:'Fervis',race:'UD',mmr:2029,league:'A',winrate:100,win:4,lose:0,social:'Tran Tin'},
