@@ -226,16 +226,19 @@ onBeforeMount(() => {
     border-spacing: 0;
 
     th {
+      color: #f7aa06;
       text-align: center;
+      font-size: 20px;
       padding: 5px 10px;
     }
 
     tr {
       &:hover {
-        background-color: #eee;
+        background-color: rgb(2, 2, 2);
       }
 
       td {
+        color: #ebdec2;
         padding: 5px 10px;
       }
     }
