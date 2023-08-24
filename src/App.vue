@@ -1,5 +1,4 @@
 <script setup>
-import wc3backgroundPath from '../src/assets/wallpaperflare.com_wallpaper.jpg'
 import VueLatestTable from '/lib/VueLatestTable.vue'
 const headers = [
     {
@@ -40,7 +39,6 @@ const headers = [
 </script>
 
 <template>
-  <body class="logo" :style="{ backgroundImage: `url(${wc3backgroundPath})` }">
 <VueLatestTable
     :headers="headers" 
     :data="desserts" 
@@ -54,12 +52,10 @@ const headers = [
     noData="Sorry, there is no data to show for now..." 
     rowsPerPageText="Rows per page" 
   />
-  </body>
 </template>
 
 <style scoped>
-.logo {
-  height: 100%;
-  width: 100%;
+#VueLastestTable{
+  font-family: Quadrata;
 }
 </style>
