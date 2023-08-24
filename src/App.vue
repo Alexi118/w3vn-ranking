@@ -47,7 +47,7 @@ const headers = [
       allText: 'ALL' // for translation purposes
     }"
     :defaultTheme="true"
-    noData="Sorry, there is no data to show for now..." 
+    noData="Sorry, there is no data to show..." 
     rowsPerPageText="Rows per page" 
   />
 </template>

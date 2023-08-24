@@ -202,7 +202,7 @@ onBeforeMount(() => {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.814);
+  background-color: rgba(0,0,0,.9);
 
   #isSearchable {
     display: flex;
@@ -229,21 +229,25 @@ onBeforeMount(() => {
     th {
       color: #f7aa06;
       text-align: center;
-      font-size: 30px;
+      font-size: 25px;
       font-weight: bold;
       padding: 5px 10px;
     }
 
-    tr {
-      &:hover {
-        background-color: rgb(2, 2, 2);
+    tbody:nth-child(2){
+          & :hover{
+            color: #ebdec2;
+            background-color: rgba(0,0,0,.9); 
+          }     
       }
 
+    tr {
       td {
+        border-top: thin solid hsla(0,0%,100%,.12);
+        border-bottom: thin solid hsla(0,0%,100%,.12);
         color: #ebdec2;
         font-family: sans-serif;
         font-size: 15px;
-        font-weight:bold;  
         padding: 5px 10px;
       }
     }
@@ -292,6 +296,7 @@ onBeforeMount(() => {
   }
 
   .noData {
+    color: #f7aa06; 
     text-align: center;
     margin: 20px 0;
   }
