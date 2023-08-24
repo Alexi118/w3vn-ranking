@@ -198,10 +198,11 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 #vueLatestTable {
-  font-family: Quadrata;
+  font-family: Friz Quadrata;
   display: block;
   width: 100%;
   padding: 10px;
+  background-color: rgba(0, 0, 0, 0.814);
 
   #isSearchable {
     display: flex;
@@ -228,7 +229,8 @@ onBeforeMount(() => {
     th {
       color: #f7aa06;
       text-align: center;
-      font-size: 20px;
+      font-size: 30px;
+      font-weight: bold;
       padding: 5px 10px;
     }
 
@@ -239,12 +241,18 @@ onBeforeMount(() => {
 
       td {
         color: #ebdec2;
+        font-family: sans-serif;
+        font-size: 15px;
+        font-weight:bold;  
         padding: 5px 10px;
       }
     }
   }
 
   footer {
+    color: #f7aa06;
+    font-size: 15px;
+    font-weight: bold;
     justify-content: space-between;
     padding-left: 10px;
     margin-top: 20px;
@@ -289,7 +297,5 @@ onBeforeMount(() => {
   }
 }
 .defaultTheme {
-  border: 1px solid #aaa;
-  border-radius: 10px;
 }
 </style>

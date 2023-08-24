@@ -2,18 +2,16 @@
 import VueLatestTable from '/lib/VueLatestTable.vue'
 const headers = [
     {
-      text: 'Ranking',
-      align: 'start',
-      filterable: true,
+      text: 'No',
       value: 'ranking'
     },
     { text: 'Name', value: 'name' },
     { text: 'Race', value: 'race' },
     { text: 'MMR', value: 'mmr' },
-    { text: 'League', value: 'league' },
-    { text: 'Winrate (%)', value: 'winrate' },
-    { text: 'Win', value: 'win' },
-    { text: 'Lose', value: 'lose' },
+    { text: 'Rank', value: 'league' },
+    { text: 'W/L(%)', value: 'winrate' },
+    { text: 'W', value: 'win' },
+    { text: 'L', value: 'lose' },
     { text: 'Zalo', value: 'social' },
 
   ]
@@ -55,7 +53,4 @@ const headers = [
 </template>
 
 <style scoped>
-#VueLastestTable{
-  font-family: Quadrata;
-}
 </style>
