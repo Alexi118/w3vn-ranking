@@ -16,13 +16,15 @@
 
 a {
   font-weight: 500;
-  padding: 50px;
+  font-size: 25px;
+  padding: 35px;
   color: #f7aa06;
   text-decoration: inherit;
 }
-span:hover {
+
+a:hover {
   color: #f7aa06;
-  box-shadow: 0 0 17px gray
+  box-shadow: 0 0 13px gray
 }
 
 body {
@@ -30,7 +32,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100px;
 }
 
 h1 {
@@ -73,12 +75,3 @@ button:focus-visible {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #f30925;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

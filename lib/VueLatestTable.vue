@@ -201,7 +201,7 @@ onBeforeMount(() => {
 
 <style scoped lang="scss">
 #vueLatestTable {
-  margin-top: 10%;
+  margin-top: 30%;
   font-family: Friz Quadrata;
   display: block;
   width: 100%;
