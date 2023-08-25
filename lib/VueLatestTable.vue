@@ -161,7 +161,10 @@ onBeforeMount(() => {
       </thead>
       <tbody>
         <tr v-for="row in showedData" :key="row.id">
-          <td v-for="header in headers" :key="header.value">{{ row[header.value] }}</td>
+          <td v-for="header in headers" :key="header.value">
+            <!-- <span v-if="row[header.value] == ranking">hehehe</span> -->
+            {{ row[header.value] }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -233,12 +236,9 @@ onBeforeMount(() => {
       padding: 5px 10px;
     }
 
-    tbody:nth-child(2){
-          & :hover{
-            color: #ebdec2;
-            background-color: rgba(0,0,0,.9); 
-          }     
-      }
+    tr:hover {
+      box-shadow: 0 0 17px gray;
+    }
 
     tr {
       td {
