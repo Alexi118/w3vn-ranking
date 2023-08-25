@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
-import Nav from './components/Nav-bar.vue'
+import '/src/style.css'
+import App from '/src/App.vue'
+import Nav from '/src/components/Nav-bar.vue'
 
 createApp(Nav).mount('#nav')
 createApp(App).mount('#app')
