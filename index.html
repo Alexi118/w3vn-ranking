@@ -1,28 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/warcraft3-reforged-icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>W3VN Melee Gplay Ranking</title>
-  </head>
-  <body>
-    <div id="nav"></div>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/assets/warcraft3-reforged-icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W3VN Melee Gplay Ranking</title>
+</head>
+
+<body>
+  <div id="nav"></div>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
 <style>
   @import url('https://fonts.cdnfonts.com/css/friz-quadrata');
+
   body {
-  background-image: url("/src/assets/wallpaperflare.com_wallpaper.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("/src/assets/wallpaperflare.com_wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  .nav{
+
+  .nav {
     position: fixed;
   }
-  .app{
+
+  .app {
     margin-top: 0px;
+  }
+
+  /* Media query for mobile devices  */
+  @media only screen and (max-width: 767px) {
+    body {
+    background-image: url("/src/assets/wallpaperflare.com_wallpaper.jpg");
+    }
   }
 </style>
