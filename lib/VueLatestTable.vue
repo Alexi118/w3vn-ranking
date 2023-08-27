@@ -163,9 +163,9 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
-            <span class="gold" v-if="row[header.value] == '1' && header.text == 'No'">gold</span>
-            <span class="silver" v-if="row[header.value] == '2' && header.text == 'No'">silver</span> 
-            <span class="plat" v-if="row[header.value] == '3' && header.text == 'No'">plat</span> 
+            <img src="../src/assets/BTNHumanArmorUpThree-Reforged.webp" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
+            <img src="../src/assets/BTNHumanArmorUpTwo-Reforged.webp" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
+            <img src="../src/assets/BTNHumanArmorUpOne-Reforged.webp" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
           </td>
         </tr>
       </tbody>
@@ -226,25 +226,27 @@ onBeforeMount(() => {
     }
   }
 
+  .top3{
+    width: 40px;
+    height: 40px;
+  }
+
   table {
     width: 100%;
     border-spacing: 0;
 
     th {
       color: #f7aa06;
-      text-align: center;
-      font-size: 25px;
+      text-align: left;
+      font-size: 20px;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 0 0.9%;
     }
 
     tr:hover {
       box-shadow: 0 0 17px gray;
     }
 
-    tbody tr:nth-child(1){
-      color: #f7aa06;
-    }
 
     tr {
       td {
