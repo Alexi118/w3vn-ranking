@@ -152,7 +152,9 @@ onBeforeMount(() => {
         :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox"
       />
+      <span id="lastUpdated">Update: 08/27/2023</span>
     </div>
+    
     <table aria-hidden="true">
       <thead>
         <tr>
@@ -163,9 +165,9 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
-            <img src="../src/assets/BTNHumanArmorUpThree-Reforged.webp" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
-            <img src="../src/assets/BTNHumanArmorUpTwo-Reforged.webp" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
-            <img src="../src/assets/BTNHumanArmorUpOne-Reforged.webp" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
+            <img src="../src/assets/Grandmaster.jpeg" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
+            <img src="../src/assets/Master.jpeg" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
+            <img src="../src/assets/Diamond.jpeg" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
           </td>
         </tr>
       </tbody>
@@ -208,6 +210,11 @@ onBeforeMount(() => {
   width: 100%;
   padding: 10px;
   background-color: rgba(0,0,0,.9);
+
+  #lastUpdated{
+    color: #f7aa06;
+    margin-left: 50%;
+  }
 
   #isSearchable {
     display: flex;
