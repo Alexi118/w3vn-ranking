@@ -9,11 +9,11 @@
       <span>Gplay</span>
     </a>
     <a class="link" href="" target="_blank">
-      <span>War3 1.26</span>
-    </a>
-    <a class="link" href="" target="_blank">
       <span>Map</span>
     </a>
+    <!-- <a class="link" href="" target="_blank">
+      <span>War3 1.26</span>
+    </a> -->
   </div>
 </div>
 </template>

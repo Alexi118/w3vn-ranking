@@ -237,6 +237,8 @@ onBeforeMount(() => {
   }
 
   .top3{
+    margin-left: 18%;
+    margin-right: 5%;
     width: 40px;
     height: 40px;
   }
@@ -247,36 +249,28 @@ onBeforeMount(() => {
 
     th {
       color: #f7aa06;
-      text-align: left;
+      text-align: center;
       font-size: 20px;
       font-weight: bold;
+    }
+
+    tbody tr td:nth-child(1){
+      text-align: left;
     }
 
     tbody tr:hover {
       box-shadow: 0 0 17px gray;
     } 
 
-    tbody tr:has(#top1){
-      background-color: #f7ab068f; 
-      }
-
     tbody tr:has(#top1):hover{
       background-color: #f7ab06e1; 
       text-shadow: 1px 1px black;
     } 
 
-    tbody tr:has(#top2){
-      background-color: #0033fd5c;
-    }
-
     tbody tr:has(#top2):hover{
       background-color: #0033fdbc;
       text-shadow: 1px 1px black;
     } 
-
-    tbody tr:has(#top3){
-      background-color: #79797b7f;
-    }
 
     tbody tr:has(#top3):hover{
       background-color: #79797bbc;
@@ -290,6 +284,7 @@ onBeforeMount(() => {
         color: #ebdec2;
         font-family: sans-serif;
         font-size: 15px;
+        text-align: center;
       }
 
     }

@@ -33,6 +33,7 @@ const headers = [
 </script>
 
 <template>
+<div id ="w3nladder-text">W3VN LADDER 2023</div>
 <VueLatestTable
     :headers="headers" 
     :data="desserts" 
@@ -49,4 +50,15 @@ const headers = [
 </template>
 
 <style scoped>
+#w3nladder-text{
+  font-family: 'Eurostile MN', sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 18%;
+  margin-bottom: 5%;
+  text-align: center;
+  color: white; 
+  text-shadow: 3px 1px black;
+  letter-spacing: .05em;
+}
 </style>
