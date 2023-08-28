@@ -22,11 +22,6 @@ a {
   text-decoration: inherit;
 }
 
-a:hover {
-  color: #f7aa06;
-  box-shadow: 0 0 13px gray
-}
-
 body {
   margin: 0;
   display: flex;

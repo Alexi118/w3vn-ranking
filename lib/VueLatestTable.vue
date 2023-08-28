@@ -247,10 +247,9 @@ onBeforeMount(() => {
       text-align: left;
       font-size: 20px;
       font-weight: bold;
-      padding: 0 0.9%;
     }
 
-    tr:hover {
+    tbody tr:hover {
       box-shadow: 0 0 17px gray;
     }
 
@@ -262,8 +261,8 @@ onBeforeMount(() => {
         color: #ebdec2;
         font-family: sans-serif;
         font-size: 15px;
-        padding: 5px 10px;
       }
+
     }
   }
 
