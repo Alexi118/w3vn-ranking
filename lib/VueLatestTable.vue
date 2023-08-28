@@ -285,6 +285,7 @@ onBeforeMount(() => {
         font-family: sans-serif;
         font-size: 15px;
         text-align: center;
+        padding: 10px 10px;
       }
 
     }
