@@ -152,7 +152,10 @@ onBeforeMount(() => {
         :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox"
       />
-      <span id="lastUpdated">Update: 08/27/2023</span>
+      <div id="lastUpdated">
+        <div>Season I</div>
+        <div>Update: 08/27/2023</div>
+      </div>
     </div>
     
     <table aria-hidden="true">
@@ -165,9 +168,9 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
-            <img src="../src/assets/Grandmaster.jpeg" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
-            <img src="../src/assets/Master.jpeg" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
-            <img src="../src/assets/Diamond.jpeg" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
+            <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
+            <img src="../src/assets/Master.jpeg" id="top2" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
+            <img src="../src/assets/Diamond.jpeg" id="top3" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
           </td>
         </tr>
       </tbody>
@@ -251,8 +254,34 @@ onBeforeMount(() => {
 
     tbody tr:hover {
       box-shadow: 0 0 17px gray;
+    } 
+
+    tbody tr:has(#top1){
+      background-color: #f7ab068f; 
+      }
+
+    tbody tr:has(#top1):hover{
+      background-color: #f7ab06e1; 
+      text-shadow: 1px 1px black;
+    } 
+
+    tbody tr:has(#top2){
+      background-color: #0033fd5c;
     }
 
+    tbody tr:has(#top2):hover{
+      background-color: #0033fdbc;
+      text-shadow: 1px 1px black;
+    } 
+
+    tbody tr:has(#top3){
+      background-color: #79797b7f;
+    }
+
+    tbody tr:has(#top3):hover{
+      background-color: #79797bbc;
+      text-shadow: 1px 1px black;
+    } 
 
     tr {
       td {

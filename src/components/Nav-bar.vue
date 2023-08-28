@@ -32,7 +32,7 @@
 .nav-links{
   width: 100%;
   display: flex;
-  margin: 0 20%;
+  margin: 0 21%;
 }
 
 </style>
