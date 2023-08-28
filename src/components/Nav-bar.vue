@@ -4,7 +4,7 @@
 <template>
 <div class="nav-menu">
   <div class="nav-links"> 
-    <img class="w3vn-icon" src="/src/assets/w3vn-icon.jpeg" alt="w3vn-icon">
+    <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon">
     <a class="link" href="https://gplay.vn/trangchu" target="_blank">
       <span>Gplay</span>
     </a>
@@ -25,7 +25,8 @@
 }
 
 .w3vn-icon{
-  width: 7%;
+  width: 120px;
+  height: 120px;
   display: flex;
 }
 .nav-links{
@@ -33,7 +34,5 @@
   display: flex;
   margin: 0 20%;
 }
-
-
 
 </style>
