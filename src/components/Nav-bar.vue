@@ -33,7 +33,7 @@
   margin-top: 60px;
   margin: 0;
   padding: 0;
-  overflow: scroll;
+  overflow: hidden;
 }
 .nav-menu li{
   float: left;
@@ -56,8 +56,8 @@
 }
 
 @media only screen and (max-width: 425px){
-  #nav{
-    overflow: scroll;
+  .nav-menu ul{
+  overflow: scroll;
   }
 }
 </style>
