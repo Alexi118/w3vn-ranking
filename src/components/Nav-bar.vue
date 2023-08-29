@@ -24,15 +24,15 @@
 .nav-menu{
   background-color: rgba(0,0,0,.9);
   width: 100vw;
-  height: 6.3vw;
+  height: 150px;
   display: flex;
 }
 
 .w3vn-icon{
-  width: 6.3vw;
-  height: 6.3vw;
+  width: 150px;
+  height: 150px;
   margin-left: 25%;
-  display: inline;
+  display: inherit;
 }
 .nav-links{
   display: flex;

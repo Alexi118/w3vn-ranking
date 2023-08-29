@@ -54,7 +54,7 @@ const headers = [
   font-family: 'Eurostile MN', sans-serif;
   font-size: 50px;
   font-weight: bolder;
-  margin-top: 18%;
+  margin-top: 21%;
   margin-bottom: 5%;
   text-align: center;
   color: white; 
