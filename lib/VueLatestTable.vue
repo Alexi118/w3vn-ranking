@@ -208,15 +208,16 @@ onBeforeMount(() => {
 <style scoped lang="scss">
 #vueLatestTable {
   font-family: Friz Quadrata;
-  display: block;
-  width: 90%;
+  display: table;
+  width: 70%;
   padding: 10px;
   background-color: rgba(0,0,0,.9);
   margin-left: auto;
   margin-right: auto;
 
   #lastUpdated{
-    text-align: right;
+    display: inline-table;
+    margin-left: auto;
     color: #f7aa06; 
     font-size: 15px;
   }
@@ -293,7 +294,6 @@ onBeforeMount(() => {
   footer {
     color: #f7aa06;
     font-size: 15px;
-    font-weight: bold;
     justify-content: space-between;
     padding-left: 10px;
     margin-top: 20px;
