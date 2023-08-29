@@ -153,8 +153,7 @@ onBeforeMount(() => {
         v-model="searchBox"
       />
       <div id="lastUpdated">
-        <div>Season I</div>
-        <div>Update: 08/27/2023</div>
+        <div>Season I - Update: 08/27/2023</div>
       </div>
     </div>
     
@@ -210,13 +209,16 @@ onBeforeMount(() => {
 #vueLatestTable {
   font-family: Friz Quadrata;
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   background-color: rgba(0,0,0,.9);
+  margin-left: auto;
+  margin-right: auto;
 
   #lastUpdated{
-    color: #f7aa06;
-    margin-left: 50%;
+    text-align: right;
+    color: #f7aa06; 
+    font-size: 15px;
   }
 
   #isSearchable {
@@ -231,14 +233,12 @@ onBeforeMount(() => {
     }
     .searchBox {
       display: block;
-      width: 30%;
+      width: 300px;
       padding: 10px 10px;
     }
   }
 
   .top3{
-    margin-left: 18%;
-    margin-right: 5%;
     width: 40px;
     height: 40px;
   }
@@ -287,7 +287,6 @@ onBeforeMount(() => {
         text-align: center;
         padding: 10px 10px;
       }
-
     }
   }
 

@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: 'Friz Quadrata', sans-serif;;
   line-height: 1.5;
   font-weight: 400;
@@ -17,17 +17,18 @@
 a {
   font-weight: 500;
   font-size: 25px;
-  padding: 40px 30px;
+  padding: 40px 40px;
+  width: 100px;
   color: #f7aa06;
   text-decoration: inherit;
 }
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100px;
+  justify-content: center;
 }
 
 h1 {
@@ -57,21 +58,20 @@ button:focus-visible {
 .card {
   padding: 2em;
 }
+*/
+/* #nav{
+  padding: 0 200px;
+} */
 
-#nav{
-  position: fixed;
-  top: 0;
-}
-
-#app {
+/* #app {
   width: 100%;
-  margin-bottom: 20%;
-  padding: 0 20%;
-}
+  padding: 0 200px;
+  margin-bottom: 200px;
+} */
 
-  /* Media query for mobile devices  */
-  @media only screen and (max-width: 767px) {
-    body {
-    background-image: url("/src/assets/wallpaperflare.com_wallpaper.jpg");
-    }
+/* @media only screen and (max-width: 768px){
+  #nav{
+    position: fixed;
+    top: 0;
   }
+} */ 
