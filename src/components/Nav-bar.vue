@@ -54,11 +54,5 @@
   width: 150px;
   height: 150px;
 }
-
-@media only screen and (max-width: 425px){
-  .nav-menu ul{
-  overflow: scroll;
-  }
-}
 </style>
 
