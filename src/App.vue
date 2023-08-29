@@ -61,4 +61,10 @@ const headers = [
   text-shadow: 3px 1px black;
   letter-spacing: .05em;
 }
+
+@media only screen and (max-width: 425px){
+  #w3nladder-text{
+    margin-left: 100px;
+  }
+}
 </style>

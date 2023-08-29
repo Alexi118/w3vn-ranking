@@ -31,29 +31,33 @@
 }
 .nav-menu ul{
   margin-top: 60px;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
 }
 .nav-menu li{
+  float: left;
   list-style-type: none;
-  display: inline;
-  :hover {
-      box-shadow: 0 0 17px gray; 
-  }
-
   > a{
-    font-size: 25px;
-    padding: 61px;
-    color: #f7aa06;
-    text-decoration: inherit;
+    display: block;
+    color: #f7ab06e1;
+    text-align: center;
+    padding: 66px 50px;
+    text-decoration: none;
   }
 }
+.nav-menu li a:hover {
+      background-color: #ffb502;
+      color: azure;
+  }
 .w3vn-icon{
   width: 150px;
   height: 150px;
 }
-@media only screen and (max-width: 768px){
+
+@media only screen and (max-width: 425px){
   #nav{
-    position: fixed;
-    top: 0;
+    overflow: scroll;
   }
 }
 </style>

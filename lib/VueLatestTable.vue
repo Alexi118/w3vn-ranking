@@ -242,6 +242,7 @@ onBeforeMount(() => {
   .top3{
     width: 40px;
     height: 40px;
+    margin-left: 10px;
   }
 
   table {
