@@ -60,11 +60,12 @@
   width: 150px;
   height: 150px;
 }
+
 @media only screen and (max-width: 425px){
-  .nav-menu li a{
-    padding: 30px 30px;
+  .nav-menu{
+    width: 600px;
+    height: 100px;
   }
 }
-
 </style>
 
