@@ -25,7 +25,6 @@
 <style scoped>
 .nav-menu {
   background-color: rgba(0, 0, 0, .9);
-  height: 150px;
   display: flex;
   top: 0;
   left: 0;
