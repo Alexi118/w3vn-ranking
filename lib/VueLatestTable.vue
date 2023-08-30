@@ -146,17 +146,13 @@ onBeforeMount(() => {
       <!-- <select multiple class="searchableFields" size="1">
         <option v-for="field in searchableFields" :key="field.id">{{ field }}</option>
       </select> -->
-      <input
-        type="text"
-        class="searchBox"
-        :placeholder="searchPlaceholder ? searchPlaceholder : ''"
-        v-model="searchBox"
-      />
+      <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
+        v-model="searchBox" />
       <div id="lastUpdated">
         <div>Season I - Update: 08/27/2023</div>
       </div>
     </div>
-    
+
     <table aria-hidden="true">
       <thead>
         <tr>
@@ -167,9 +163,12 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
-            <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3" v-if="row[header.value] == '1' && header.text == 'No'"/>
-            <img src="../src/assets/Master.jpeg" id="top2" class="top3" v-if="row[header.value] == '2' && header.text == 'No'"/>
-            <img src="../src/assets/Diamond.jpeg" id="top3" class="top3" v-if="row[header.value] == '3' && header.text == 'No'"/> 
+            <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3"
+              v-if="row[header.value] == '1' && header.text == 'No'" />
+            <img src="../src/assets/Master.jpeg" id="top2" class="top3"
+              v-if="row[header.value] == '2' && header.text == 'No'" />
+            <img src="../src/assets/Diamond.jpeg" id="top3" class="top3"
+              v-if="row[header.value] == '3' && header.text == 'No'" />
           </td>
         </tr>
       </tbody>
@@ -211,14 +210,14 @@ onBeforeMount(() => {
   display: table;
   width: 70%;
   padding: 10px;
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0, 0, 0, .9);
   margin-left: auto;
   margin-right: auto;
 
-  #lastUpdated{
+  #lastUpdated {
     display: inline-table;
     margin-left: auto;
-    color: #f7aa06; 
+    color: #f7aa06;
     font-size: 15px;
   }
 
@@ -232,6 +231,7 @@ onBeforeMount(() => {
       width: calc(100% - 20px);
       padding: 10px 10px;
     }
+
     .searchBox {
       display: block;
       width: 300px;
@@ -239,7 +239,7 @@ onBeforeMount(() => {
     }
   }
 
-  .top3{
+  .top3 {
     width: 40px;
     height: 40px;
     margin-left: 10px;
@@ -256,33 +256,33 @@ onBeforeMount(() => {
       font-weight: bold;
     }
 
-    tbody tr td:nth-child(1){
+    tbody tr td:nth-child(1) {
       text-align: left;
     }
 
     tbody tr:hover {
       box-shadow: 0 0 17px gray;
-    } 
+    }
 
-    tbody tr:has(#top1):hover{
-      background-color: #f7ab06e1; 
+    tbody tr:has(#top1):hover {
+      background-color: #f7ab06e1;
       text-shadow: 1px 1px black;
-    } 
+    }
 
-    tbody tr:has(#top2):hover{
+    tbody tr:has(#top2):hover {
       background-color: #0033fdbc;
       text-shadow: 1px 1px black;
-    } 
+    }
 
-    tbody tr:has(#top3):hover{
+    tbody tr:has(#top3):hover {
       background-color: #79797bbc;
       text-shadow: 1px 1px black;
-    } 
+    }
 
     tr {
       td {
-        border-top: thin solid hsla(0,0%,100%,.12);
-        border-bottom: thin solid hsla(0,0%,100%,.12);
+        border-top: thin solid hsla(0, 0%, 100%, .12);
+        border-bottom: thin solid hsla(0, 0%, 100%, .12);
         color: #ebdec2;
         font-family: sans-serif;
         font-size: 15px;
@@ -300,11 +300,11 @@ onBeforeMount(() => {
     margin-top: 20px;
     display: flex;
 
-    & > div {
+    &>div {
       flex-grow: 1;
     }
 
-    & > div:last-child {
+    &>div:last-child {
       text-align: right;
       display: flex;
       justify-content: flex-end;
@@ -321,6 +321,7 @@ onBeforeMount(() => {
 
       .arrows {
         margin-top: 10px;
+
         .ml {
           margin-left: 10px;
         }
@@ -334,7 +335,7 @@ onBeforeMount(() => {
   }
 
   .noData {
-    color: #f7aa06; 
+    color: #f7aa06;
     text-align: center;
     margin: 20px 0;
   }
