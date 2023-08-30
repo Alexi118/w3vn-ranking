@@ -47,7 +47,7 @@
     display: block;
     color: #f7ab06e1;
     text-align: center;
-    padding: 66px 50px;
+    padding: 65px 50px;
     text-decoration: none;
   }
 }

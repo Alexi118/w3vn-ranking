@@ -64,8 +64,9 @@ const headers = [
 
 @media only screen and (max-width: 425px){
   #w3nladder-text{
-    margin-left: 140px;
+    margin-left: 130px;
     display: flex;
+    overflow: inherit;
   }
 }
 </style>
