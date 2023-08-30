@@ -58,7 +58,7 @@
 
 .w3vn-icon {
   width: 150px;
-  height: 150px;
+  height: 150.9px;
 }
 
 @media only screen and (max-width: 425px){

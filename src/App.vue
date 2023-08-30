@@ -16,7 +16,7 @@ const headers = [
   {ranking:2,name:'Peki',race:'HU',mmr:1879,league:'B',winrate:0,win:0,lose:2,social:'Duong'},
   {ranking:3,name:'Tix3love3',race:'UD',mmr:1800,league:'B',winrate:0,win:0,lose:0,social:'Hai'},
   {ranking:4,name:'Pow',race:'HU',mmr:1707,league:'B',winrate:0,win:4,lose:3,social:'Nguyen Dinh Vuong'},
-  {ranking:5,name:'Ninh',race:'RND',mmr:1600,league:'C',winrate:0,win:0,lose:0,social:'Austro'},
+  {ranking:5,name:'Ninh',race:'RDM',mmr:1600,league:'C',winrate:0,win:0,lose:0,social:'Austro'},
   {ranking:6,name:'Shadow',race:'OC',mmr:1486,league:'C',winrate:0,win:0,lose:2,social:'Ot Cay'},
   {ranking:7,name:'TrieuVoi',race:'OC',mmr:1421,league:'C',winrate:100,win:2,lose:0,social:'Nguyen Dinh Hoang'},
   {ranking:8,name:'Kaioshin',race:'OC',mmr:1288,league:'D',winrate:0,win:2,lose:2,social:'Dinh Quang Manh'},

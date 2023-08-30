@@ -163,6 +163,16 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
+            <img src="../src/assets/OC.jpg" class="race" 
+            v-if="row[header.value] == 'OC' && header.text == 'Race'"/>
+            <img src="../src/assets/HU.jpg" class="race" 
+            v-if="row[header.value] == 'HU' && header.text == 'Race'"/>
+            <img src="../src/assets/UD.jpg" class="race" 
+            v-if="row[header.value] == 'UD' && header.text == 'Race'"/>
+            <img src="../src/assets/NE.jpg" class="race" 
+            v-if="row[header.value] == 'NE' && header.text == 'Race'"/>
+            <img src="../src/assets/RDM.jpg" class="race" 
+            v-if="row[header.value] == 'RDM' && header.text == 'Race'"/>
             <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3"
               v-if="row[header.value] == '1' && header.text == 'No'" />
             <img src="../src/assets/Master.jpeg" id="top2" class="top3"
@@ -234,7 +244,7 @@ onBeforeMount(() => {
 
     .searchBox {
       display: block;
-      width: 300px;
+      width: 150px;
       padding: 10px 10px;
     }
   }
@@ -271,6 +281,22 @@ onBeforeMount(() => {
     tbody tr td:nth-child(2) {
       text-align: left;
     }
+
+    tbody tr td:nth-child(3){
+      font-size:0
+    }
+    .race{
+      width: 30px;
+      height: 30px;
+    }
+
+    tbody tr td:nth-child(7){
+      color: green;
+    }   
+    
+    tbody tr td:nth-child(8){
+      color: red;
+    }    
 
     tbody tr:hover {
       box-shadow: 0 0 17px gray;
