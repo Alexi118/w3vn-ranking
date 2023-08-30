@@ -256,7 +256,19 @@ onBeforeMount(() => {
       font-weight: bold;
     }
 
+    thead tr th:nth-child(1){
+      text-align: left;
+    }
+
+    thead tr th:nth-child(2){
+      text-align: left;
+    }
+
     tbody tr td:nth-child(1) {
+      text-align: left;
+    }
+
+    tbody tr td:nth-child(2) {
       text-align: left;
     }
 
@@ -338,6 +350,18 @@ onBeforeMount(() => {
     color: #f7aa06;
     text-align: center;
     margin: 20px 0;
+  }
+}
+
+@media only screen and (min-width: 2000px){
+  #vueLatestTable{
+    font-family: Friz Quadrata;
+    display: table;
+    width: 50%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .9);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>

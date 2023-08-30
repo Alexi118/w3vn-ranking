@@ -46,7 +46,7 @@
     display: block;
     color: #f7ab06e1;
     text-align: center;
-    padding: 65px 50px;
+    padding: 65.5px 50px;
     text-decoration: none;
   }
 }
@@ -62,6 +62,10 @@
 }
 
 @media only screen and (max-width: 425px){
+  .w3vn-icon {
+  width: 100px;
+  height: 100px;
+}
   .nav-menu{
     width: 600px;
     height: 100px;
