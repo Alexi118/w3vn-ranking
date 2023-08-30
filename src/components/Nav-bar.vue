@@ -59,5 +59,12 @@
 .w3vn-icon {
   width: 150px;
   height: 150px;
-}</style>
+}
+@media only screen and (max-width: 425px){
+  .nav-menu li a{
+    padding: 30px 30px;
+  }
+}
+
+</style>
 
