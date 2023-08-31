@@ -5,7 +5,7 @@ const headers = [
     { text: 'Name', value: 'name' },
     { text: 'Race', value: 'race' },
     { text: 'MMR', value: 'mmr' },
-    { text: 'Rank', value: 'league' },
+    //{ text: 'Rank', value: 'league' },
     { text: 'W/L(%)', value: 'winrate' },
     { text: 'W', value: 'win' },
     { text: 'L', value: 'lose' },

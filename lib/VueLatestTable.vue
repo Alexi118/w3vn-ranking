@@ -290,11 +290,11 @@ onBeforeMount(() => {
       height: 30px;
     }
 
-    tbody tr td:nth-child(7){
+    tbody tr td:nth-child(6){
       color: green;
     }   
     
-    tbody tr td:nth-child(8){
+    tbody tr td:nth-child(7){
       color: red;
     }    
 
