@@ -38,13 +38,15 @@
   height: 40px;
 }
 
-#w3vn-maps{
+#w3vn-maps {
   display: block;
   padding: 38.90px 28px;
 }
-.nav-items-text{
+
+.nav-items-text {
   display: list-item;
 }
+
 .nav-menu li {
   float: left;
   list-style-type: none;
@@ -68,24 +70,26 @@
   height: 150.9px;
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 320px) {
   .w3vn-icon {
-  width: 100px;
-  height: 100px;
-}
-  #w3vn-maps{
+    width: 100px;
+    height: 100px;
+  }
+
+  #w3vn-maps {
     display: block;
     padding: 20.90px 28px;
   }
-  .nav-menu{
+
+  .nav-menu {
     width: 600px;
     height: 100px;
   }
-  .nav-menu li{
-    >a{
-    padding: 20.1px 30px;
+
+  .nav-menu li {
+    >a {
+      padding: 20.1px 30px;
     }
   }
-}
-</style>
+}</style>
 
