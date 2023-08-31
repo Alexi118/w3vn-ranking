@@ -163,15 +163,15 @@ onBeforeMount(() => {
         <tr v-for="row in showedData" :key="row.id">
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
-            <img src="../src/assets/OC.jpg" class="race" 
+            <img src="../src/assets/OC.jpg" class="race" alt="Orc"
             v-if="row[header.value] == 'OC' && header.text == 'Race'"/>
-            <img src="../src/assets/HU.jpg" class="race" 
+            <img src="../src/assets/HU.jpg" class="race" alt="Human"
             v-if="row[header.value] == 'HU' && header.text == 'Race'"/>
-            <img src="../src/assets/UD.jpg" class="race" 
+            <img src="../src/assets/UD.jpg" class="race" alt="Undead"
             v-if="row[header.value] == 'UD' && header.text == 'Race'"/>
-            <img src="../src/assets/NE.jpg" class="race" 
+            <img src="../src/assets/NE.jpg" class="race" alt="NightElf"
             v-if="row[header.value] == 'NE' && header.text == 'Race'"/>
-            <img src="../src/assets/RDM.jpg" class="race" 
+            <img src="../src/assets/RDM.jpg" class="race" alt="Random"
             v-if="row[header.value] == 'RDM' && header.text == 'Race'"/>
             <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3"
               v-if="row[header.value] == '1' && header.text == 'No'" />
