@@ -148,6 +148,16 @@ onBeforeMount(() => {
       </select> -->
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
+        <div class="form-wrapper">
+            <select id="race-select">
+              <option value>any</option>
+              <option value="OC">OC</option>
+              <option value="HU">HU</option>
+              <option value="UD">UD</option>
+              <option value="NE">NE</option>
+              <option value="RDM">RD</option>
+            </select>
+        </div>
       <div id="lastUpdated">
         <div>Season I - Update: 08/27/2023</div>
       </div>
@@ -235,12 +245,17 @@ onBeforeMount(() => {
     display: flex;
     margin-bottom: 20px;
 
-    .searchableFields {
-      flex-grow: 1;
-      margin-right: 20px;
-      width: calc(100% - 20px);
-      padding: 10px 10px;
+    #race-select{
+      width: 50px;
+      height: 39px;
+      margin-left: 40px;
     }
+    // .searchableFields {
+    //   flex-grow: 1;
+    //   margin-right: 20px;
+    //   width: calc(100% - 20px);
+    //   padding: 10px 10px;
+    // }
 
     .searchBox {
       display: block;
