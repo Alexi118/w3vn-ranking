@@ -58,6 +58,8 @@ const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
   data = props.data,
   search = searchBox?.value,
+
+
   fromSearch = false
 ) => {
   // by default, we assign the rowsPerPage to page if the page is empty
@@ -88,6 +90,12 @@ const updateRowsPerPage = (
   if (allSelected) {
     rowsPerPage.value = -1 // we selected the all in the dropdown again
   }
+}
+
+const findByRacefilter = (arr, value) =>{
+  value = String(value).toLocaleLowerCase()
+
+  return arr.filter(o => Object.entries(o).some(entry => String(entry[1]).toLocaleLowerCase.includes(value)))
 }
 
 const findInValues = (arr, value) => {
@@ -149,7 +157,7 @@ onBeforeMount(() => {
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
         <div class="form-wrapper">
-            <select id="race-select">
+            <select id="race-select" @change="updateRowsPerPage">
               <option value>any</option>
               <option value="OC">OC</option>
               <option value="HU">HU</option>
