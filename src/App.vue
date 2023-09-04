@@ -1,14 +1,6 @@
 <script setup>
 import VueLatestTable from '/lib/VueLatestTable.vue'
 
-const racedatas = [
-  {text: 'any'},
-  {text: 'UD'},
-  {text: 'OC'},
-  {text: 'HU'},
-  {text: 'NE'},
-]
-
 const headers = [
   { text: 'No', value: 'ranking' },
   { text: 'Name', value: 'name' },
@@ -20,7 +12,7 @@ const headers = [
   { text: 'L', value: 'lose' },
   { text: 'Zalo', value: 'social' },
 ]
-const desserts = [
+const players = [
   { ranking: 1, name: 'Fervis', race: 'UD', mmr: 2029, league: 'A', winrate: 100, win: 4, lose: 0, social: 'Tran Tin' },
   { ranking: 2, name: 'Peki', race: 'HU', mmr: 1879, league: 'B', winrate: 0, win: 0, lose: 2, social: 'Duong' },
   { ranking: 3, name: 'Tix3love3', race: 'UD', mmr: 1800, league: 'B', winrate: 0, win: 0, lose: 0, social: 'Hai' },
@@ -43,7 +35,7 @@ const desserts = [
 
 <template>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
-  <VueLatestTable :headers="headers" :data="desserts" :raceFilterData="racedatas" :isSearchable="true" searchPlaceholder="Search" :footer="{
+  <VueLatestTable :headers="headers" :data="players" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All
     allText: 'ALL' // for translation purposes
   }" :defaultTheme="true" noData="Sorry, there is no data to show..." rowsPerPageText="Rows per page" />

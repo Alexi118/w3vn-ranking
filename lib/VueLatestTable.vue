@@ -10,10 +10,6 @@ const props = defineProps({
     type: Array,
     required: true
   },
-  raceFilterData:{
-    type: Array,
-    required: true
-  },
   isSearchable: Boolean,
   searchPlaceholder: String,
   footer: { type: Object, default: {} },
@@ -57,19 +53,6 @@ const totalPages = computed(() => {
     ? showingTotalRecords.value / rowsPerPage.value
     : Math.trunc(showingTotalRecords.value / rowsPerPage.value) + 1
 })
-
-const filterByRace = (
-  data = props.raceFilterData
-) =>{
-  if (data === 'HU'){
-    return console.log('HU')
-  } else
-  if (data === 'UD'){
-    return console.log('UD')
-  }
-  else
-    return console.log('any')
-}
 
 const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
@@ -167,11 +150,6 @@ onBeforeMount(() => {
       </select> -->
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
-        <div class="form-wrapper">
-            <select id="race-select" @change="filterByRace()">
-              <option v-for="racedata in racedatas" :key="index" :selected="racedatas[0]">{{ racedata.text }}</option>
-            </select>
-        </div>
       <div id="lastUpdated">
         <div>Season I - Update: 08/27/2023</div>
       </div>
@@ -260,11 +238,6 @@ onBeforeMount(() => {
     display: flex;
     margin-bottom: 20px;
 
-    #race-select{
-      width: 50px;
-      height: 39px;
-      margin-left: 40px;
-    }
     // .searchableFields {
     //   flex-grow: 1;
     //   margin-right: 20px;
