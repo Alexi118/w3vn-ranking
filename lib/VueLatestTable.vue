@@ -10,6 +10,10 @@ const props = defineProps({
     type: Array,
     required: true
   },
+  raceFilterData:{
+    type: Array,
+    required: true
+  },
   isSearchable: Boolean,
   searchPlaceholder: String,
   footer: { type: Object, default: {} },
@@ -54,6 +58,19 @@ const totalPages = computed(() => {
     : Math.trunc(showingTotalRecords.value / rowsPerPage.value) + 1
 })
 
+const filterByRace = (
+  data = props.raceFilterData
+) =>{
+  if (data === 'HU'){
+    return console.log('HU')
+  } else
+  if (data === 'UD'){
+    return console.log('UD')
+  }
+  else
+    return console.log('any')
+}
+
 const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
   data = props.data,
@@ -90,12 +107,6 @@ const updateRowsPerPage = (
   if (allSelected) {
     rowsPerPage.value = -1 // we selected the all in the dropdown again
   }
-}
-
-const findByRacefilter = (arr, value) =>{
-  value = String(value).toLocaleLowerCase()
-
-  return arr.filter(o => Object.entries(o).some(entry => String(entry[1]).toLocaleLowerCase.includes(value)))
 }
 
 const findInValues = (arr, value) => {
@@ -157,13 +168,8 @@ onBeforeMount(() => {
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
         <div class="form-wrapper">
-            <select id="race-select" @change="updateRowsPerPage">
-              <option value>any</option>
-              <option value="OC">OC</option>
-              <option value="HU">HU</option>
-              <option value="UD">UD</option>
-              <option value="NE">NE</option>
-              <option value="RDM">RD</option>
+            <select id="race-select" @change="filterByRace()">
+              <option v-for="racedata in racedatas" :key="index" :selected="racedatas[0]">{{ racedata.text }}</option>
             </select>
         </div>
       <div id="lastUpdated">
@@ -241,6 +247,7 @@ onBeforeMount(() => {
   background-color: rgba(0, 0, 0, .9);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 
   #lastUpdated {
     display: inline-table;

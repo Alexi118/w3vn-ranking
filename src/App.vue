@@ -1,5 +1,14 @@
 <script setup>
 import VueLatestTable from '/lib/VueLatestTable.vue'
+
+const racedatas = [
+  {text: 'any'},
+  {text: 'UD'},
+  {text: 'OC'},
+  {text: 'HU'},
+  {text: 'NE'},
+]
+
 const headers = [
   { text: 'No', value: 'ranking' },
   { text: 'Name', value: 'name' },
@@ -34,7 +43,7 @@ const desserts = [
 
 <template>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
-  <VueLatestTable :headers="headers" :data="desserts" :isSearchable="true" searchPlaceholder="Search" :footer="{
+  <VueLatestTable :headers="headers" :data="desserts" :raceFilterData="racedatas" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All
     allText: 'ALL' // for translation purposes
   }" :defaultTheme="true" noData="Sorry, there is no data to show..." rowsPerPageText="Rows per page" />
