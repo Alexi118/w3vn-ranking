@@ -12,6 +12,9 @@ const props = defineProps({
   },
   isSearchable: Boolean,
   searchPlaceholder: String,
+  raceFilterBox: {
+    type: Array
+  },
   footer: { type: Object, default: {} },
   defaultTheme: Boolean,
   noData: {
@@ -25,6 +28,7 @@ const STRINGS = {
   allText: 'All'
 }
 const defaultRowsPerPage = [10, 25, 50, -1]
+const raceData = ['any','NE','HU','UD','OC']
 
 const tempData = ref([])
 const currentPage = ref(1)
@@ -42,7 +46,7 @@ const showingRange = computed(() => {
 
 const showingTotalRecords = ref(0)
 const searchBox = ref('')
-// const searchableFields = ref([])
+const raceFilterBox = ref([])
 
 const footer = props.footer || {} // it will be an empty object {} by default
 let showedData = ref([])
@@ -92,6 +96,15 @@ const updateRowsPerPage = (
   }
 }
 
+const onRaceFilter = (arr, value) => {
+  value = String(value).toLowerCase()
+  if(value === 'any')
+    return arr
+  if(value === 'UD')
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]).toLowerCase().includes(value)))
+  console.log(value)
+}
+
 const findInValues = (arr, value) => {
   value = String(value).toLowerCase()
 
@@ -99,10 +112,17 @@ const findInValues = (arr, value) => {
 }
 
 watch(
+  () => raceFilterBox.value,
+  (newData, _oldData) => {
+    const data = onRaceFilter(props.data, newData)
+    updateRowsPerPage(rowsPerPage.value, data, newData, true)
+  }
+)
+
+watch(
   () => searchBox.value,
   (newData, _oldData) => {
     const data = findInValues(props.data, newData)
-
     updateRowsPerPage(rowsPerPage.value, data, newData, true)
   }
 )
@@ -117,8 +137,8 @@ const changePage = (page = currentPage.value) => {
 }
 
 onBeforeMount(() => {
-  // if (props?.isSearchable) {
-  //   searchableFields.value = props.headers.map(item => item.value)
+  // if (props?.raceFilterBox) {
+  //    raceFilterBox.value = ['any','NE','HU','UD','OC']
   // }
 
   if (!Array.isArray(footer.rowsPerPage)) {
@@ -145,9 +165,9 @@ onBeforeMount(() => {
 <template>
   <div id="vueLatestTable" :class="defaultTheme ? 'defaultTheme' : ''">
     <div id="isSearchable">
-      <!-- <select multiple class="searchableFields" size="1">
-        <option v-for="field in searchableFields" :key="field.id">{{ field }}</option>
-      </select> -->
+      <select class="raceFilterBox" size="1" v-model="raceFilterBox">
+        <option v-for="field in raceData" :key="field.id" :value="field">{{ field }}</option>
+      </select>
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
       <div id="lastUpdated">
@@ -237,13 +257,10 @@ onBeforeMount(() => {
   #isSearchable {
     display: flex;
     margin-bottom: 20px;
-
-    // .searchableFields {
-    //   flex-grow: 1;
-    //   margin-right: 20px;
-    //   width: calc(100% - 20px);
-    //   padding: 10px 10px;
-    // }
+    .raceFilterBox {
+      margin-right: 20px;
+      padding: 10px 10px;
+    }
 
     .searchBox {
       display: block;
