@@ -67,6 +67,10 @@ const updateRowsPerPage = (
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false
 
+  if(fromSearch && !search && race){
+    data = onRaceFilter(data, race)
+  }
+
   if (!fromSearch && search) {
     data = findInValues(data, search)
   }
@@ -127,6 +131,7 @@ watch(
   (newData, _oldData) => {
     const data = onRaceFilter(props.data, newData)
     updateRowsPerPage(rowsPerPage.value, data, newData, true)
+    console.log(rowsPerPage.value,data, newData)
   }
 )
 
@@ -135,6 +140,7 @@ watch(
   (newData, _oldData) => {
     const data = findInValues(props.data, newData)
     updateRowsPerPage(rowsPerPage.value, data, newData, true)
+    console.log(rowsPerPage.value,data, newData)
   }
 )
 
