@@ -12,9 +12,7 @@ const props = defineProps({
   },
   isSearchable: Boolean,
   searchPlaceholder: String,
-  raceFilterBox: {
-    type: Array
-  },
+  raceFilterBox: String,
   footer: { type: Object, default: {} },
   defaultTheme: Boolean,
   noData: {
@@ -28,7 +26,7 @@ const STRINGS = {
   allText: 'All'
 }
 const defaultRowsPerPage = [10, 25, 50, -1]
-const raceData = [{text: 'any', value: 'any'},{text: 'NE', value: 'NE-icon'},{text: 'HU', value: 'HU-icon'},{text: 'UD', value: 'UD-icon'},{text: 'OC', value: 'OC-icon'},{text: 'RDM', value: 'RDM-icon'}]
+const raceData = [{text: 'Any', value: 'any'},{text: 'NE', value: 'NE-icon'},{text: 'HU', value: 'HU-icon'},{text: 'UD', value: 'UD-icon'},{text: 'OC', value: 'OC-icon'},{text: 'RDM', value: 'RDM-icon'}]
 
 const tempData = ref([])
 const currentPage = ref(1)
@@ -46,7 +44,7 @@ const showingRange = computed(() => {
 
 const showingTotalRecords = ref(0)
 const searchBox = ref('')
-const raceFilterBox = ref([])
+const raceFilterBox = ref(raceData[0].value)
 
 const footer = props.footer || {} // it will be an empty object {} by default
 let showedData = ref([])
@@ -99,24 +97,24 @@ const updateRowsPerPage = (
 const onRaceFilter = (arr, value) => {
   value = String(value).toLowerCase()
   if(value === 'HU-icon'){
-    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'HU-icon')))
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'HU-icon'))
     }
   if(value === 'NE-icon'){
-    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) =='NE-icon')))
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) =='NE-icon'))
     }
   if(value === 'UD-icon'){
-    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'UD-icon')))
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'UD-icon'))
     }
   if(value === 'OC-icon'){
-    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'OC-icon')))
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'OC-icon'))
     }
   if(value === 'RDM-icon'){
-  return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'RDM-icon')))
+    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'RDM-icon'))
   }
-  if(value === 'any') {
+  if(value === 'Any') {
     return arr
     }
-    console.log(arr,value)
+  console.log(value)
   }
 
 const findInValues = (arr, value) => {
@@ -178,7 +176,7 @@ onBeforeMount(() => {
 <template>
   <div id="vueLatestTable" :class="defaultTheme ? 'defaultTheme' : ''">
     <div id="isSearchable">
-      <select class="raceFilterBox" size="1" v-model="raceFilterBox">
+      <select class="raceFilterBox" size="1" v-model="raceFilterBox" >
         <option v-for="field in raceData" :key="field.id" :value="field.value">{{ field.text }}</option>
       </select>
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"

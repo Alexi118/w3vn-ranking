@@ -10,7 +10,7 @@
           <span class="nav-items-text">Gplay</span>
         </a></li>
       <li><a id="w3vn-maps"
-          href="https://gplay.vn/congdong/warcraft-iii/huong-dan-tai-bo-max-fix-balance-w3vn-melee-patch-1.26?postId=8c6157c2-c040-4f86-9493-23caa6093259&groupId=6cd27c1d-4cf1-47a7-ba11-473cbbf8d23b&zarsrc=31&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo"
+          href="https://drive.google.com/file/d/1HYtvTMEGMy4LcwaKMwMO_I7Ff5zMPeX8/view"
           target="_blank">
           <img class="we-icon" src="../assets/we-icon.png" alt="we-icon" width="50px" height="50px">
           <span class="nav-items-text">W3VN Maps</span>
