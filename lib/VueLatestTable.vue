@@ -28,7 +28,7 @@ const STRINGS = {
   allText: 'All'
 }
 const defaultRowsPerPage = [10, 25, 50, -1]
-const raceData = ['any','NE','HU','UD','OC']
+const raceData = [{text: 'any', value: 'any'},{text: 'NE', value: 'NE-icon'},{text: 'HU', value: 'HU-icon'},{text: 'UD', value: 'UD-icon'},{text: 'OC', value: 'OC-icon'},{text: 'RDM', value: 'RDM-icon'}]
 
 const tempData = ref([])
 const currentPage = ref(1)
@@ -62,7 +62,7 @@ const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
   data = props.data,
   search = searchBox?.value,
-
+  race = raceFilterBox.value,
 
   fromSearch = false
 ) => {
@@ -98,16 +98,29 @@ const updateRowsPerPage = (
 
 const onRaceFilter = (arr, value) => {
   value = String(value).toLowerCase()
-  if(value === 'any')
+  if(value === 'HU-icon'){
+    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'HU-icon')))
+    }
+  if(value === 'NE-icon'){
+    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) =='NE-icon')))
+    }
+  if(value === 'UD-icon'){
+    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'UD-icon')))
+    }
+  if(value === 'OC-icon'){
+    return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'OC-icon')))
+    }
+  if(value === 'RDM-icon'){
+  return arr.filter(arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'RDM-icon')))
+  }
+  if(value === 'any') {
     return arr
-  if(value === 'UD')
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]).toLowerCase().includes(value)))
-  console.log(value)
-}
+    }
+    console.log(arr,value)
+  }
 
 const findInValues = (arr, value) => {
   value = String(value).toLowerCase()
-
   return arr.filter(o => Object.entries(o).some(entry => String(entry[1]).toLowerCase().includes(value)))
 }
 
@@ -166,7 +179,7 @@ onBeforeMount(() => {
   <div id="vueLatestTable" :class="defaultTheme ? 'defaultTheme' : ''">
     <div id="isSearchable">
       <select class="raceFilterBox" size="1" v-model="raceFilterBox">
-        <option v-for="field in raceData" :key="field.id" :value="field">{{ field }}</option>
+        <option v-for="field in raceData" :key="field.id" :value="field.value">{{ field.text }}</option>
       </select>
       <input type="text" class="searchBox" :placeholder="searchPlaceholder ? searchPlaceholder : ''"
         v-model="searchBox" />
@@ -186,15 +199,15 @@ onBeforeMount(() => {
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
             <img src="../src/assets/OC.jpg" class="race" alt="Orc"
-              v-if="row[header.value] == 'OC' && header.text == 'Race'" />
+              v-if="row[header.value] == 'OC-icon' && header.text == 'Race'" />
             <img src="../src/assets/HU.jpg" class="race" alt="Human"
-              v-if="row[header.value] == 'HU' && header.text == 'Race'" />
+              v-if="row[header.value] == 'HU-icon' && header.text == 'Race'" />
             <img src="../src/assets/UD.jpg" class="race" alt="Undead"
-              v-if="row[header.value] == 'UD' && header.text == 'Race'" />
+              v-if="row[header.value] == 'UD-icon' && header.text == 'Race'" />
             <img src="../src/assets/NE.jpg" class="race" alt="NightElf"
-              v-if="row[header.value] == 'NE' && header.text == 'Race'" />
+              v-if="row[header.value] == 'NE-icon' && header.text == 'Race'" />
             <img src="../src/assets/RDM.jpg" class="race" alt="Random"
-              v-if="row[header.value] == 'RDM' && header.text == 'Race'" />
+              v-if="row[header.value] == 'RDM-icon' && header.text == 'Race'" />
             <img src="../src/assets/Grandmaster.jpeg" id="top1" class="top3"
               v-if="row[header.value] == '1' && header.text == 'No'" />
             <img src="../src/assets/Master.jpeg" id="top2" class="top3"
