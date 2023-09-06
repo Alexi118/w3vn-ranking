@@ -56,7 +56,7 @@ const players = [
 
 @media only screen and (max-width: 425px) {
   #w3nladder-text {
-    margin-left: 130px;
+    margin-left: 100px;
     display: flex;
     overflow: inherit;
   }

@@ -67,7 +67,7 @@ const updateRowsPerPage = (
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false
 
-  if(fromSearch && !search && race){
+  if(fromSearch && race){
     data = onRaceFilter(data, race)
   }
 
@@ -78,7 +78,7 @@ const updateRowsPerPage = (
   tempData.value = data
 
   showingTotalRecords.value = data.length
-
+  console.log(data)
   if (pageSize === -1) {
     pageSize = data.length
     allSelected = true
