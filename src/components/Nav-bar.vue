@@ -1,29 +1,58 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <nav class="nav-menu">
-    <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon">
+    <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
-      <li><a href="https://gplay.vn/trangchu" target="_blank">
-          <img class="nav-item" src="../assets/gplayG.png" alt="gplay-icon" width="50px" height="50px">
+      <li>
+        <a href="https://gplay.vn/trangchu" target="_blank">
+          <img
+            class="nav-item"
+            src="../assets/gplayG.png"
+            alt="gplay-icon"
+            width="50px"
+            height="50px"
+          />
           <span class="nav-items-text">Install Gplay</span>
-        </a></li>
-      <li><a href="https://drive.google.com/file/d/1HYtvTMEGMy4LcwaKMwMO_I7Ff5zMPeX8/view" target="_blank">
-          <img class="nav-item" src="../assets/we-icon.png" alt="we-icon" width="50px" height="50px">
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://drive.google.com/file/d/1HYtvTMEGMy4LcwaKMwMO_I7Ff5zMPeX8/view"
+          target="_blank"
+        >
+          <img
+            class="nav-item"
+            src="../assets/we-icon.png"
+            alt="we-icon"
+            width="50px"
+            height="50px"
+          />
           <span class="nav-items-text">W3VN Maps</span>
-        </a></li>
-      <li><a href="https://drive.google.com/drive/folders/1oxY6Ce6IAG62g4BE89MydgFIJ3B5PMZ9" target="_blank">
-          <img class="nav-item" src="../assets/wc3-icon.png" alt="note-icon" width="50px" height="50px">
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://drive.google.com/drive/folders/1oxY6Ce6IAG62g4BE89MydgFIJ3B5PMZ9"
+          target="_blank"
+        >
+          <img
+            class="nav-item"
+            src="../assets/wc3-icon.png"
+            alt="note-icon"
+            width="50px"
+            height="50px"
+          />
           <span class="nav-items-text">W3VN Notes</span>
-        </a></li>
+        </a>
+      </li>
     </ul>
   </nav>
 </template>
 
 <style scoped>
 .nav-menu {
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   top: 0;
   left: 0;
@@ -44,11 +73,11 @@
   float: left;
   list-style-type: none;
 
-  >a {
+  > a {
     display: block;
     color: #f7ab06e1;
     text-align: center;
-    padding: 38.90px;
+    padding: 38.9px;
     text-decoration: none;
   }
 }
@@ -75,9 +104,9 @@
   }
 
   .nav-menu li {
-    >a {
+    > a {
       padding: 20.1px 6px;
     }
   }
-}</style>
-
+}
+</style>
