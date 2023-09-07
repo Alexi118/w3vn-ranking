@@ -66,10 +66,10 @@ const updateRowsPerPage = (
 ) => {
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false
-
-  if(fromSearch && race){
-    data = onRaceFilter(data, race)
-  }
+  console.log('log1',data,race)
+  // if(race){
+  //   data = onRaceFilter(data, race)
+  // }
 
   if (!fromSearch && search) {
     data = findInValues(data, search)
@@ -78,7 +78,7 @@ const updateRowsPerPage = (
   tempData.value = data
 
   showingTotalRecords.value = data.length
-  console.log(data)
+  console.log(data,'updateRowsPerPage')
   if (pageSize === -1) {
     pageSize = data.length
     allSelected = true
@@ -100,25 +100,26 @@ const updateRowsPerPage = (
 
 const onRaceFilter = (arr, value) => {
   value = String(value).toLowerCase()
-  if(value === 'HU-icon'){
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'HU-icon'))
+  let result
+  if(value === 'hu-icon'){
+    result = arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'HU-icon'))
     }
-  if(value === 'NE-icon'){
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) =='NE-icon'))
+  if(value === 'ne-icon'){
+    result = arr.filter(o => Object.entries(o).some(entry => String(entry[1]) =='NE-icon'))
     }
-  if(value === 'UD-icon'){
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'UD-icon'))
+  if(value === 'ud-icon'){
+    result = arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'UD-icon'))
     }
-  if(value === 'OC-icon'){
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'OC-icon'))
+  if(value === 'oc-icon'){
+    result = arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'OC-icon'))
     }
-  if(value === 'RDM-icon'){
-    return arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'RDM-icon'))
+  if(value === 'rdm-icon'){
+    result = arr.filter(o => Object.entries(o).some(entry => String(entry[1]) == 'RDM-icon'))
   }
-  if(value === 'Any') {
-    return arr
+  if(value === 'any') {
+    result = arr
     }
-  console.log(value)
+  return result
   }
 
 const findInValues = (arr, value) => {
@@ -131,7 +132,7 @@ watch(
   (newData, _oldData) => {
     const data = onRaceFilter(props.data, newData)
     updateRowsPerPage(rowsPerPage.value, data, newData, true)
-    console.log(rowsPerPage.value,data, newData)
+    console.log(rowsPerPage.value,data, newData,'watchraceFilterBox')
   }
 )
 
@@ -140,7 +141,7 @@ watch(
   (newData, _oldData) => {
     const data = findInValues(props.data, newData)
     updateRowsPerPage(rowsPerPage.value, data, newData, true)
-    console.log(rowsPerPage.value,data, newData)
+    console.log(rowsPerPage.value,data, newData,'watchsearchBox')
   }
 )
 
