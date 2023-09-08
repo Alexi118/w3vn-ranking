@@ -1,5 +1,5 @@
 <script setup>
-import VueLatestTable from '/lib/VueLatestTable.vue'
+import VueLatestTable from '/src/components/VueLatestTable.vue'
 
 const headers = [
   { text: 'No', value: 'ranking' },

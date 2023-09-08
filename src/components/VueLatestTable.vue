@@ -76,6 +76,7 @@ const updateRowsPerPage = (
 
   if (!fromSearch && search && raceFilterBox.value != "any") {
     data = findInValues(data, search);
+    console.log('findInvalue',data,search)
   }
 
   tempData.value = data;
@@ -227,49 +228,49 @@ onBeforeMount(() => {
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
             <img
-              src="../src/assets/OC.jpg"
+              src="../assets/OC.jpg"
               class="race"
               alt="Orc"
               v-if="row[header.value] == 'OC-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/HU.jpg"
+              src="../assets/HU.jpg"
               class="race"
               alt="Human"
               v-if="row[header.value] == 'HU-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/UD.jpg"
+              src="../assets/UD.jpg"
               class="race"
               alt="Undead"
               v-if="row[header.value] == 'UD-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/NE.jpg"
+              src="../assets/NE.jpg"
               class="race"
               alt="NightElf"
               v-if="row[header.value] == 'NE-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/RDM.jpg"
+              src="../assets/RDM.jpg"
               class="race"
               alt="Random"
               v-if="row[header.value] == 'RDM-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/Grandmaster.jpeg"
+              src="../assets/Grandmaster.jpeg"
               id="top1"
               class="top3"
               v-if="row[header.value] == '1' && header.text == 'No'"
             />
             <img
-              src="../src/assets/Master.jpeg"
+              src="../assets/Master.jpeg"
               id="top2"
               class="top3"
               v-if="row[header.value] == '2' && header.text == 'No'"
             />
             <img
-              src="../src/assets/Diamond.jpeg"
+              src="../assets/Diamond.jpeg"
               id="top3"
               class="top3"
               v-if="row[header.value] == '3' && header.text == 'No'"
