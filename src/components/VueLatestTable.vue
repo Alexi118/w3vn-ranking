@@ -68,15 +68,20 @@ const updateRowsPerPage = (
   data = props.data,
   search = searchBox?.value,
   race = raceFilterBox.value,
-
+  
   fromSearch = false
 ) => {
+  console.log('arrayBeforeIf', data)
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-
-  if (!fromSearch && search && raceFilterBox.value != "any") {
+  if (!fromSearch && search && raceFilterBox.value == 'any') {
     data = findInValues(data, search);
-    console.log('findInvalue',data,search)
+    console.log('findInvalue1',data,search)
+  }
+
+  if (raceFilterBox.value != 'any') {
+    data = findInValues(data, search);
+    console.log('findInvalue2',data,search)
   }
 
   tempData.value = data;
