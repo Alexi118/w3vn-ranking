@@ -27,7 +27,7 @@ const STRINGS = {
 };
 const defaultRowsPerPage = [10, 25, 50, -1];
 const raceData = [
-  { text: "Any", value: "any" },
+  { text: "Any", value: "Any" },
   { text: "NE", value: "NE-icon" },
   { text: "HU", value: "HU-icon" },
   { text: "UD", value: "UD-icon" },
@@ -74,15 +74,17 @@ const updateRowsPerPage = (
   console.log('arrayBeforeIf', data)
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-  if (!fromSearch && search && raceFilterBox.value == 'any') {
+  if (!fromSearch && search && raceFilterBox.value == 'Any') {
+    console.log(raceFilterBox.value,search)
     data = findInValues(data, search);
     console.log('findInvalue1',data,search)
   }
 
-  if (raceFilterBox.value != 'any') {
-    data = findInValues(data, search);
-    console.log('findInvalue2',data,search)
-  }
+  // if(!fromSearch && search && raceFilterBox.value !== 'Any'){
+  //   console.log(raceFilterBox.value)
+  //   data = findInValues(data, search);
+  //   console.log('findInvalue2',data,search)
+  // }
 
   tempData.value = data;
 
