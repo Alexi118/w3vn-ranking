@@ -92,12 +92,12 @@ const updateRowsPerPage = (
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
   console.log(race.valueOf())
-  if (!fromSearch && search && (race == 'Any')) {
+  if (!fromSearch && search) {
     data = findInValues(data, search);
     console.log('1st If')
   }
 
-  if(race != 'Any'){
+  if(fromSearch && !search && race != 'Any'){
     data = onRaceFilter(data, race);
     console.log('2nd If')
   }
