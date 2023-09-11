@@ -1,5 +1,8 @@
 <script setup>
 import { computed, onBeforeMount, ref, watch, onMounted } from "vue";
+
+//supabase set up
+/*
 // import { supabase } from '../lib/supabaseClient'
 
 //   const playerDatas = ref([])
@@ -15,7 +18,7 @@ import { computed, onBeforeMount, ref, watch, onMounted } from "vue";
 //   onMounted(() => {
 //     getPlayerData()
 //   })
-
+*/
 const props = defineProps({
   headers: {
     type: Array,
@@ -82,24 +85,22 @@ const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
   data = props.data,
   search = searchBox?.value,
-  race = raceFilterBox.value,
+  race = raceFilterBox?.value,
   
   fromSearch = false
 ) => {
-  console.log('arrayBeforeIf', data)
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-  if (!fromSearch && search && raceFilterBox.value == 'Any') {
-    console.log(raceFilterBox.value,search)
+  console.log(race.valueOf())
+  if (!fromSearch && search && (race == 'Any')) {
     data = findInValues(data, search);
-    console.log('findInvalue1',data,search)
+    console.log('1st If')
   }
 
-  // if(!fromSearch && search && raceFilterBox.value !== 'Any'){
-  //   console.log(raceFilterBox.value)
-  //   data = findInValues(data, search);
-  //   console.log('findInvalue2',data,search)
-  // }
+  if(race != 'Any'){
+    data = onRaceFilter(data, race);
+    console.log('2nd If')
+  }
 
   tempData.value = data;
 
@@ -164,12 +165,19 @@ const findInValues = (arr, value) => {
     )
   );
 };
-
+/*
+  pageSize = rowsPerPage.value,
+  data = props.data,
+  search = searchBox?.value,
+  race = raceFilterBox?.value,
+  
+  fromSearch = false
+*/
 watch(
   () => raceFilterBox.value,
   (newData, _oldData) => {
     const data = onRaceFilter(props.data, newData);
-    updateRowsPerPage(rowsPerPage.value, data, newData, true);
+    updateRowsPerPage(rowsPerPage.value, data, null, newData, true);
   }
 );
 
