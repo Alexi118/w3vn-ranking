@@ -1,24 +1,6 @@
 <script setup>
 import { computed, onBeforeMount, ref, watch, onMounted } from "vue";
 
-//supabase set up
-/*
-// import { supabase } from '../lib/supabaseClient'
-
-//   const playerDatas = ref([])
-
-//   async function getPlayerData() {
-//   const { data } = await supabase
-//   .from('players')
-//   .select('player_id,name,race,elo,social,win,lose')
-
-//   playerDatas.value = data;
-//   }
-
-//   onMounted(() => {
-//     getPlayerData()
-//   })
-*/
 const props = defineProps({
   headers: {
     type: Array,
