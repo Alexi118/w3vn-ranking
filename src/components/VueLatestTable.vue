@@ -91,7 +91,7 @@ const updateRowsPerPage = (
 ) => {
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-  console.log(race.valueOf())
+  
   if (!fromSearch && search) {
     data = findInValues(data, search);
     console.log('1st If')
@@ -103,7 +103,6 @@ const updateRowsPerPage = (
   }
 
   tempData.value = data;
-
   showingTotalRecords.value = data.length;
 
   if (pageSize === -1) {
