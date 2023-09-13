@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeMount, ref, watch, onMounted } from "vue";
+import { computed, onBeforeMount, ref, watch} from "vue";
 
 const props = defineProps({
   headers: {
@@ -79,6 +79,11 @@ const updateRowsPerPage = (
     console.log('1st If')
   }
 
+  if (race == 'Any' && search) {
+    data = findInValues(data, search);
+    console.log('Any If')
+  }
+
   if(fromSearch && !search && race != 'Any'){
     data = onRaceFilter(data, race);
     console.log('2nd If')
@@ -146,14 +151,7 @@ const findInValues = (arr, value) => {
     )
   );
 };
-/*
-  pageSize = rowsPerPage.value,
-  data = props.data,
-  search = searchBox?.value,
-  race = raceFilterBox?.value,
-  
-  fromSearch = false
-*/
+
 watch(
   () => raceFilterBox.value,
   (newData, _oldData) => {
