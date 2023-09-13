@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeMount, ref, watch } from "vue";
+import { computed, onBeforeMount, ref, watch} from "vue";
 
 const props = defineProps({
   headers: {
@@ -27,7 +27,7 @@ const STRINGS = {
 };
 const defaultRowsPerPage = [10, 25, 50, -1];
 const raceData = [
-  { text: "Any", value: "any" },
+  { text: "Any", value: "Any" },
   { text: "NE", value: "NE-icon" },
   { text: "HU", value: "HU-icon" },
   { text: "UD", value: "UD-icon" },
@@ -67,19 +67,29 @@ const updateRowsPerPage = (
   pageSize = rowsPerPage.value,
   data = props.data,
   search = searchBox?.value,
-  race = raceFilterBox.value,
-
+  race = raceFilterBox?.value,
+  
   fromSearch = false
 ) => {
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-
-  if (!fromSearch && search && raceFilterBox.value != "any") {
+  
+  if (!fromSearch && search) {
     data = findInValues(data, search);
+    console.log('1st If')
+  }
+
+  if (race == 'Any' && search) {
+    data = findInValues(data, search);
+    console.log('Any If')
+  }
+
+  if(fromSearch && !search && race != 'Any'){
+    data = onRaceFilter(data, race);
+    console.log('2nd If')
   }
 
   tempData.value = data;
-
   showingTotalRecords.value = data.length;
 
   if (pageSize === -1) {
@@ -146,7 +156,7 @@ watch(
   () => raceFilterBox.value,
   (newData, _oldData) => {
     const data = onRaceFilter(props.data, newData);
-    updateRowsPerPage(rowsPerPage.value, data, newData, true);
+    updateRowsPerPage(rowsPerPage.value, data, null, newData, true);
   }
 );
 
@@ -170,9 +180,6 @@ const changePage = (page = currentPage.value) => {
 };
 
 onBeforeMount(() => {
-  // if (props?.raceFilterBox) {
-  //    raceFilterBox.value = ['any','NE','HU','UD','OC']
-  // }
 
   if (!Array.isArray(footer.rowsPerPage)) {
     footer.rowsPerPage = [];
@@ -227,49 +234,49 @@ onBeforeMount(() => {
           <td v-for="header in headers" :key="header.value">
             {{ row[header.value] }}
             <img
-              src="../src/assets/OC.jpg"
+              src="../assets/OC.jpg"
               class="race"
               alt="Orc"
               v-if="row[header.value] == 'OC-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/HU.jpg"
+              src="../assets/HU.jpg"
               class="race"
               alt="Human"
               v-if="row[header.value] == 'HU-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/UD.jpg"
+              src="../assets/UD.jpg"
               class="race"
               alt="Undead"
               v-if="row[header.value] == 'UD-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/NE.jpg"
+              src="../assets/NE.jpg"
               class="race"
               alt="NightElf"
               v-if="row[header.value] == 'NE-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/RDM.jpg"
+              src="../assets/RDM.jpg"
               class="race"
               alt="Random"
               v-if="row[header.value] == 'RDM-icon' && header.text == 'Race'"
             />
             <img
-              src="../src/assets/Grandmaster.jpeg"
+              src="../assets/Grandmaster.jpeg"
               id="top1"
               class="top3"
               v-if="row[header.value] == '1' && header.text == 'No'"
             />
             <img
-              src="../src/assets/Master.jpeg"
+              src="../assets/Master.jpeg"
               id="top2"
               class="top3"
               v-if="row[header.value] == '2' && header.text == 'No'"
             />
             <img
-              src="../src/assets/Diamond.jpeg"
+              src="../assets/Diamond.jpeg"
               id="top3"
               class="top3"
               v-if="row[header.value] == '3' && header.text == 'No'"
