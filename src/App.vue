@@ -1,18 +1,20 @@
 <script setup>
 import VueLatestTable from '/src/components/VueLatestTable.vue'
-import { ref,onBeforeMount } from "vue";
+import { ref,toRaw,readonly,reactive } from "vue";
 import { supabase } from './lib/supabaseClient'
 
 const playersData = ref([])
 
-async function getData() {
-  const { data } = await supabase.from('gplay_ranking').select()
+const fetchPlayersData = async () =>{
+try{
+const { data } = await supabase.from('gplay_ranking').select('*')
+  if(data){
   playersData.value = data
+  }
+} catch(error){ 
+  console.log(error);
 }
-
-onBeforeMount(() => {
-  getData()
-})
+}
 
 const headers = [
   { text: 'No', value: 'rank' },
@@ -25,6 +27,8 @@ const headers = [
   { text: 'Zalo', value: 'social' },
 ]
 
+fetchPlayersData()
+console.log(playersData) 
 </script>
 
 <template>
