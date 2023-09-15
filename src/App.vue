@@ -13,7 +13,7 @@ async function getData() {
 onBeforeMount(() => {
   getData()
 })
-console.log(playersData)
+
 const headers = [
   { text: 'No', value: 'rank' },
   { text: 'Name', value: 'name' },
@@ -24,13 +24,12 @@ const headers = [
   { text: 'L', value: 'lose' },
   { text: 'Zalo', value: 'social' },
 ]
-const players = playersData
 
 </script>
 
 <template>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
-  <VueLatestTable :headers="headers" :data="players" :isSearchable="true" searchPlaceholder="Search" :footer="{
+  <VueLatestTable :headers="headers" :data="playersData" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All
     allText: 'ALL' // for translation purposes
   }" :defaultTheme="true" noData="Sorry, there is no data to show..." rowsPerPageText="Rows per page" />
