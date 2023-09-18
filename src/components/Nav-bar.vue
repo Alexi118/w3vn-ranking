@@ -46,6 +46,21 @@
           <span class="nav-items-text">W3VN Notes</span>
         </a>
       </li>
+      <li>
+        <a
+          href="https://drive.google.com/file/d/1QQAmwBKNsApNzEbk-jJEWQ1v9mSRv7UF/view?usp=drive_link"
+          target="_blank"
+        >
+          <img
+            class="nav-item"
+            src="../assets/replay-icon.png"
+            alt="note-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Replay Parser</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </template>

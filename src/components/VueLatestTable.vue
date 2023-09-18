@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeMount, ref, watch} from "vue";
+import { watchEffect,computed,onBeforeMount,ref, watch} from "vue";
 
 const props = defineProps({
   headers: {
@@ -45,11 +45,12 @@ const showingRange = computed(() => {
   if (end > showingTotalRecords.value || end < 0) {
     end = showingTotalRecords.value;
   }
+console.log('data',rowsPerPage, currentPage, showingTotalRecords)
 
   return { start, end };
 });
 
-const showingTotalRecords = ref(0);
+let showingTotalRecords = ref(0);
 const searchBox = ref("");
 const raceFilterBox = ref(raceData[0].value);
 
@@ -73,20 +74,13 @@ const updateRowsPerPage = (
 ) => {
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
-  
+
   if (!fromSearch && search) {
     data = findInValues(data, search);
-    console.log('1st If')
-  }
-
-  if (race == 'Any' && search) {
-    data = findInValues(data, search);
-    console.log('Any If')
   }
 
   if(fromSearch && !search && race != 'Any'){
     data = onRaceFilter(data, race);
-    console.log('2nd If')
   }
 
   tempData.value = data;
@@ -104,8 +98,8 @@ const updateRowsPerPage = (
     rowsPerPage.value = footer.rowsPerPage[0];
   }
 
-  showedData.value = data.slice(0, pageSize);
-
+  showedData = data.slice(0, pageSize);
+  
   if (allSelected) {
     rowsPerPage.value = -1; // we selected the all in the dropdown again
   }
@@ -139,7 +133,7 @@ const onRaceFilter = (arr, value) => {
     );
   }
   if (value === "any") {
-    return arr;
+    return arr
   }
 };
 
@@ -151,6 +145,13 @@ const findInValues = (arr, value) => {
     )
   );
 };
+
+watchEffect(()=>{
+  if(props.data){
+    showedData = props.data
+  }
+  showingTotalRecords.value = showedData.length
+})
 
 watch(
   () => raceFilterBox.value,
@@ -178,9 +179,9 @@ const changePage = (page = currentPage.value) => {
 
   showedData.value = tempData.value.slice(start, start + rows);
 };
-
+ 
 onBeforeMount(() => {
-
+  
   if (!Array.isArray(footer.rowsPerPage)) {
     footer.rowsPerPage = [];
   } else {
@@ -221,7 +222,7 @@ onBeforeMount(() => {
       </div>
     </div>
 
-    <table aria-hidden="true">
+    <table aria-hidden="true" v-if="showedData">
       <thead>
         <tr>
           <th v-for="header in headers" :key="header.value">

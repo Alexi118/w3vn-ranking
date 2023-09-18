@@ -1,19 +1,15 @@
 <script setup>
 import VueLatestTable from '/src/components/VueLatestTable.vue'
-import { ref,onBeforeMount } from "vue";
+import { ref,onMounted } from "vue";
 import { supabase } from './lib/supabaseClient'
 
 const playersData = ref([])
 
-async function getData() {
-  const { data } = await supabase.from('gplay_ranking').select()
+async function fetchPlayersData() {
+  const { data } = await supabase.from('gplay_ranking').select('*')
   playersData.value = data
 }
 
-onBeforeMount(() => {
-  getData()
-})
-console.log(playersData)
 const headers = [
   { text: 'No', value: 'rank' },
   { text: 'Name', value: 'name' },
@@ -24,13 +20,15 @@ const headers = [
   { text: 'L', value: 'lose' },
   { text: 'Zalo', value: 'social' },
 ]
-const players = playersData
 
+onMounted(()=>{
+  fetchPlayersData()
+})
 </script>
 
 <template>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
-  <VueLatestTable :headers="headers" :data="players" :isSearchable="true" searchPlaceholder="Search" :footer="{
+  <VueLatestTable v-if="playersData" :headers="headers" :data="playersData" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All
     allText: 'ALL' // for translation purposes
   }" :defaultTheme="true" noData="Sorry, there is no data to show..." rowsPerPageText="Rows per page" />
