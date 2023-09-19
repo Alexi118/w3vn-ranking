@@ -58,7 +58,22 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">Replay Parser</span>
+          <span class="nav-items-text">Replay Tool</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href=""
+          target="_blank"
+        >
+          <img
+            class="nav-item"
+            src="../assets/statistics.png"
+            alt="note-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Data Ladder</span>
         </a>
       </li>
     </ul>
