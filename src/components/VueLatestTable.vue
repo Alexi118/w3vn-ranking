@@ -25,7 +25,7 @@ const props = defineProps({
 const STRINGS = {
   allText: "All",
 };
-const defaultRowsPerPage = [10, 25, 50, -1];
+const defaultRowsPerPage = [-1, 10, 25, 50];
 const raceData = [
   { text: "Any", value: "Any" },
   { text: "NE", value: "NE-icon" },
@@ -45,7 +45,6 @@ const showingRange = computed(() => {
   if (end > showingTotalRecords.value || end < 0) {
     end = showingTotalRecords.value;
   }
-console.log('data',rowsPerPage, currentPage, showingTotalRecords)
 
   return { start, end };
 });
@@ -72,6 +71,7 @@ const updateRowsPerPage = (
   
   fromSearch = false
 ) => {
+
   // by default, we assign the rowsPerPage to page if the page is empty
   let allSelected = false;
 
@@ -146,12 +146,25 @@ const findInValues = (arr, value) => {
   );
 };
 
-watchEffect(()=>{
+watch(()=>{
   if(props.data){
     showedData = props.data
   }
+  
   showingTotalRecords.value = showedData.length
 })
+/*
+const updateRowsPerPage = (
+  pageSize = rowsPerPage.value,
+  data = props.data,
+  search = searchBox?.value,
+  race = raceFilterBox?.value,
+*/
+// watch(() => rowsPerPage.value,
+//   (newData, _oldData) => {
+//     console.log("aaaaaaaa", newData, _oldData)
+//     updateRowsPerPage(rowsPerPage.value, showedData, newData, true);
+//   })
 
 watch(
   () => raceFilterBox.value,
@@ -190,7 +203,7 @@ onBeforeMount(() => {
   }
 
   if (!footer?.rowsPerPage || footer.rowsPerPage.length === 0) {
-    footer["rowsPerPage"] = [10, 25, 50, -1];
+    footer["rowsPerPage"] = [-1, 10, 25, 50];
   }
 
   rowsPerPage.value = footer.rowsPerPage[0];
@@ -263,6 +276,16 @@ onBeforeMount(() => {
               class="race"
               alt="Random"
               v-if="row[header.value] == 'RDM-icon' && header.text == 'Race'"
+            />
+            <img
+              src="../assets/arrow-up.png"
+              class="arrow-up"
+              v-if="row[header.value] == '3' && header.text == 'No'"
+            />
+            <img
+              src="../assets/arrow-down.png"
+              class="arrow-down"
+              v-if="row[header.value] == '2' && header.text == 'No'"
             />
             <img
               src="../assets/Grandmaster.jpeg"

@@ -18,12 +18,14 @@ const headers = [
   { text: 'W/L(%)', value: 'winrate' },
   { text: 'W', value: 'win' },
   { text: 'L', value: 'lose' },
-  { text: 'Zalo', value: 'social' },
+  { text: 'Zalo', value: 'social' }
 ]
 
 onMounted(()=>{
   fetchPlayersData()
 })
+
+console.log(playersData)
 </script>
 
 <template>
