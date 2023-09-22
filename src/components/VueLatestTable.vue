@@ -231,7 +231,8 @@ onBeforeMount(() => {
         v-model="searchBox"
       />
       <div id="lastUpdated">
-        <div>Season I - Update: 08/27/2023</div>
+        <div>Season I - Update:</div>
+        <div>08/27/2023 14:40</div>
       </div>
     </div>
 
@@ -280,13 +281,15 @@ onBeforeMount(() => {
             <img
               src="../assets/arrow-up.png"
               class="arrow-up"
-              v-if="row[header.value] == '3' && header.text == 'No'"
+              v-if="parseInt(row[header.rankchange]) < 0"
             />
             <img
               src="../assets/arrow-down.png"
               class="arrow-down"
-              v-if="row[header.value] == '2' && header.text == 'No'"
+              v-if="parseInt(row[header.rankchange]) > 0"
             />
+            <span class="no-change" v-if="parseInt(row[header.rankchange]) == 0">
+            ---</span>
             <img
               src="../assets/Grandmaster.jpeg"
               id="top1"
