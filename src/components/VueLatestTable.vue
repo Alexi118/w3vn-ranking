@@ -1,5 +1,5 @@
 <script setup>
-import { watchEffect,computed,onBeforeMount,ref, watch} from "vue";
+import { onBeforeUpdate,onMounted,watchEffect,computed,onBeforeMount,ref, watch} from "vue";
 
 const props = defineProps({
   headers: {
@@ -25,7 +25,7 @@ const props = defineProps({
 const STRINGS = {
   allText: "All",
 };
-const defaultRowsPerPage = [-1, 10, 25, 50];
+const defaultRowsPerPage = [10, 25, 50, -1];
 const raceData = [
   { text: "Any", value: "Any" },
   { text: "NE", value: "NE-icon" },
@@ -49,8 +49,8 @@ const showingRange = computed(() => {
   return { start, end };
 });
 
-let showingTotalRecords = ref(0);
-const searchBox = ref("");
+const showingTotalRecords = ref(0);
+const searchBox = ref('');
 const raceFilterBox = ref(raceData[0].value);
 
 const footer = props.footer || {}; // it will be an empty object {} by default
@@ -98,7 +98,7 @@ const updateRowsPerPage = (
     rowsPerPage.value = footer.rowsPerPage[0];
   }
 
-  showedData = data.slice(0, pageSize);
+  showedData.value = data.slice(0, pageSize);
   
   if (allSelected) {
     rowsPerPage.value = -1; // we selected the all in the dropdown again
@@ -146,25 +146,9 @@ const findInValues = (arr, value) => {
   );
 };
 
-watch(()=>{
-  if(props.data){
-    showedData = props.data
-  }
-  
-  showingTotalRecords.value = showedData.length
+watchEffect(()=>{
+  updateRowsPerPage(-1);
 })
-/*
-const updateRowsPerPage = (
-  pageSize = rowsPerPage.value,
-  data = props.data,
-  search = searchBox?.value,
-  race = raceFilterBox?.value,
-*/
-// watch(() => rowsPerPage.value,
-//   (newData, _oldData) => {
-//     console.log("aaaaaaaa", newData, _oldData)
-//     updateRowsPerPage(rowsPerPage.value, showedData, newData, true);
-//   })
 
 watch(
   () => raceFilterBox.value,
@@ -193,27 +177,28 @@ const changePage = (page = currentPage.value) => {
   showedData.value = tempData.value.slice(start, start + rows);
 };
  
-onBeforeMount(() => {
-  
-  if (!Array.isArray(footer.rowsPerPage)) {
-    footer.rowsPerPage = [];
-  } else {
-    footer.rowsPerPage = footer.rowsPerPage.map((p) => parseInt(p)); // we parse the pages here
-    footer.rowsPerPage = footer.rowsPerPage.filter((p) => !isNaN(p)); // if it is not a Number, we will remobe the page from the list
-  }
+// onMounted(() => {
+//   console.log('onBeforeMount')
 
-  if (!footer?.rowsPerPage || footer.rowsPerPage.length === 0) {
-    footer["rowsPerPage"] = [-1, 10, 25, 50];
-  }
+//   if (!Array.isArray(footer.rowsPerPage)) {
+//     footer.rowsPerPage = [];
+//   } else {
+//     footer.rowsPerPage = footer.rowsPerPage.map((p) => parseInt(p)); // we parse the pages here
+//     footer.rowsPerPage = footer.rowsPerPage.filter((p) => !isNaN(p)); // if it is not a Number, we will remobe the page from the list
+//   }
 
-  rowsPerPage.value = footer.rowsPerPage[0];
+//   if (!footer?.rowsPerPage || footer.rowsPerPage.length === 0) {
+//     footer['rowsPerPage'] = [10, 25, 50, -1];
+//   }
 
-  updateRowsPerPage(rowsPerPage.value); // excute it initially
+//   rowsPerPage.value = footer.rowsPerPage[0];
 
-  if (!footer?.allText) {
-    footer.allText = STRINGS.allText;
-  }
-});
+//   updateRowsPerPage(rowsPerPage.value); // excute it initially
+
+//   if (!footer?.allText) {
+//     footer.allText = STRINGS.allText;
+//   }
+// });
 </script>
 
 <template>
@@ -236,7 +221,7 @@ onBeforeMount(() => {
       </div>
     </div>
 
-    <table aria-hidden="true" v-if="showedData">
+    <table aria-hidden="true">
       <thead>
         <tr>
           <th v-for="header in headers" :key="header.value">
