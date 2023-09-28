@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <nav class="nav-menu">
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
@@ -61,9 +59,9 @@
           <span class="nav-items-text">Replay Tool</span>
         </a>
       </li>
-      <li>
+      <router-link to="/dataladder">
+        <li>
         <a
-          href=""
           target="_blank"
         >
           <img
@@ -76,9 +74,16 @@
           <span class="nav-items-text">Data Ladder</span>
         </a>
       </li>
+        </router-link>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  name: 'TopNav'
+}
+</script>
 
 <style scoped>
 .nav-menu {

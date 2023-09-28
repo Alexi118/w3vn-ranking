@@ -1,4 +1,5 @@
 <script setup>
+import TopNav from './components/Nav-bar.vue'
 import VueLatestTable from '/src/components/VueLatestTable.vue'
 import { ref,onMounted } from "vue";
 import { supabase } from './lib/supabaseClient'
@@ -31,12 +32,20 @@ console.log(playersData)
 </script>
 
 <template>
+  <router-view />
+  <TopNav></TopNav>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
-  <VueLatestTable v-if="playersData" :headers="headers" :data="playersData" :isSearchable="true" searchPlaceholder="Search" :footer="{
+  <VueLatestTable :headers="headers" :data="playersData" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All
     allText: 'ALL' // for translation purposes
   }" :defaultTheme="true" noData="Sorry, there is no data to show..." rowsPerPageText="Rows per page" />
 </template>
+
+<script>
+export default {
+  name: 'Home'
+}
+</script>
 
 <style scoped>
 #w3nladder-text {
