@@ -3,6 +3,18 @@
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
+        <a href="" target="_blank">
+          <img
+            class="nav-item"
+            src="../assets/tpscroll.jpg"
+            alt="gplay-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Home Page</span>
+        </a>
+      </li>
+      <li>
         <a href="https://gplay.vn/trangchu" target="_blank">
           <img
             class="nav-item"
@@ -59,7 +71,6 @@
           <span class="nav-items-text">Replay Tool</span>
         </a>
       </li>
-      <router-link to="/dataladder">
         <li>
         <a
           target="_blank"
@@ -74,7 +85,6 @@
           <span class="nav-items-text">Data Ladder</span>
         </a>
       </li>
-        </router-link>
     </ul>
   </nav>
 </template>
