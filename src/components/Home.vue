@@ -1,5 +1,4 @@
 <script setup>
-import TopNav from './Nav-bar.vue'
 import VueLatestTable from './VueLatestTable.vue'
 import { ref,onMounted } from "vue";
 import { supabase } from '../lib/supabaseClient'

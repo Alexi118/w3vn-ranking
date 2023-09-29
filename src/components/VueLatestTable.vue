@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUpdate,onMounted,watchEffect,computed,onBeforeMount,ref, watch} from "vue";
+import { watchEffect,computed,ref, watch} from "vue";
 
 const props = defineProps({
   headers: {

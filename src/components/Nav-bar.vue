@@ -3,7 +3,7 @@
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
-        <a href="">
+        <a href="/">
           <img
             class="nav-item"
             src="../assets/tpscroll.jpg"
@@ -12,9 +12,9 @@
             height="50px"
           />
           <span class="nav-items-text">Home Page</span>
-        </a>
-      </li>
-      <li>
+          </a>
+       </li>
+     <li>
         <a href="https://gplay.vn/trangchu" target="_blank">
           <img
             class="nav-item"
@@ -72,9 +72,7 @@
         </a>
       </li>
         <li>
-        <a
-          target="_blank"
-        >
+        <a href="/dataladder">
           <img
             class="nav-item"
             src="../assets/statistics.png"
