@@ -72,7 +72,7 @@
         </a>
       </li>
         <li>
-        <a href="/dataladder">
+        <a href="/w3vn-ranking/dataladder">
           <img
             class="nav-item"
             src="../assets/statistics.png"

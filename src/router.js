@@ -6,11 +6,11 @@ import Error from './components/Error.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/w3vn-ranking/',
         component: Home
     },
     {
-        path: '/dataladder',
+        path: '/w3vn-ranking/dataladder',
         component: DataLadder
     },
     {
