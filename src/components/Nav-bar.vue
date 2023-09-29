@@ -1,10 +1,20 @@
-<script setup></script>
-
 <template>
   <nav class="nav-menu">
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
+        <a href="/">
+          <img
+            class="nav-item"
+            src="../assets/tpscroll.jpg"
+            alt="gplay-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Home Page</span>
+          </a>
+       </li>
+     <li>
         <a href="https://gplay.vn/trangchu" target="_blank">
           <img
             class="nav-item"
@@ -58,12 +68,30 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">Replay Parser</span>
+          <span class="nav-items-text">Replay Tool</span>
+        </a>
+      </li>
+        <li>
+        <a href="/dataladder">
+          <img
+            class="nav-item"
+            src="../assets/statistics.png"
+            alt="note-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Data Ladder</span>
         </a>
       </li>
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  name: 'TopNav'
+}
+</script>
 
 <style scoped>
 .nav-menu {
