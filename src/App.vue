@@ -1,5 +1,5 @@
 <template>
-  <TopNav></TopNav>"
+  <TopNav></TopNav>
   <Home></Home>
 </template>
 

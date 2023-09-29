@@ -30,8 +30,6 @@ onMounted(()=>{
 </script>
 
 <template>
-  <router-view />
-  <TopNav></TopNav>
   <div id="w3nladder-text">W3VN LADDER 2023</div>
   <VueLatestTable :headers="headers" :data="playersData" :isSearchable="true" searchPlaceholder="Search" :footer="{
     rowsPerPage: [-1, 10, 25, 50], // we only use the numbers, if there is a typo, we skip it. -1 means All

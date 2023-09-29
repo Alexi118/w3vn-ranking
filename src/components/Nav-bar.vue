@@ -3,7 +3,7 @@
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
-        <a href="" target="_blank">
+        <a href="">
           <img
             class="nav-item"
             src="../assets/tpscroll.jpg"
