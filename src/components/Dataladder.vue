@@ -17,7 +17,9 @@ console.log(raceStatistic)
 </script>
 
 <template>
-    <h1>This is dataladder page </h1>
+    <ul class="raceStats">
+      <li v-for="race in raceStatistic" :key="race.id">{{ race.race }} {{ race.count }}</li>
+    </ul>
  </template>
  
  <script>
@@ -25,3 +27,13 @@ console.log(raceStatistic)
     name: 'DataLadder'
  }
  </script>
+
+ <style>
+.raceStats{
+   text-align: center;
+   margin-top: 300px;
+   color: white;
+   font-size: xx-large;
+   list-style-type: none;
+}
+</style>
