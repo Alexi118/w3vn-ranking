@@ -3,7 +3,7 @@
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
-        <a href="/">
+        <a href='/w3vn-ranking/'>
           <img
             class="nav-item"
             src="../assets/tpscroll.jpg"
@@ -72,7 +72,7 @@
         </a>
       </li>
         <li>
-        <router-link to="/w3vn-ranking/dataladder">
+        <a href="/w3vn-ranking/dataladder">
           <img
             class="nav-item"
             src="../assets/statistics.png"
@@ -81,7 +81,7 @@
             height="50px"
           />
           <span class="nav-items-text">Data Ladder</span>
-        </router-link>
+        </a>
       </li>
     </ul>
   </nav>

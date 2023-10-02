@@ -18,7 +18,6 @@ console.log(raceStatistic)
 </script>
 
 <template>
-    <TopNav></TopNav>
     <h1>This is dataladder page </h1>
  </template>
  
