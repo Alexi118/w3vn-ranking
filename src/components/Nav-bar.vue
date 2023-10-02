@@ -72,7 +72,7 @@
         </a>
       </li>
         <li>
-        <a href="/w3vn-ranking/dataladder">
+        <router-link to="/w3vn-ranking/dataladder">
           <img
             class="nav-item"
             src="../assets/statistics.png"
@@ -81,15 +81,18 @@
             height="50px"
           />
           <span class="nav-items-text">Data Ladder</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-  name: 'TopNav'
+    name: 'TopNav',
+    components: { RouterLink }
 }
 </script>
 
