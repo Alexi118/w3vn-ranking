@@ -217,7 +217,7 @@ const changePage = (page = currentPage.value) => {
       />
       <div id="lastUpdated">
         <div>Season I - Update:</div>
-        <div>08/27/2023 14:40</div>
+        <div>10/9/2023 4:06PM</div>
       </div>
     </div>
 
