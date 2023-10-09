@@ -3,16 +3,14 @@
     <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
     <ul>
       <li>
-        <a href='/w3vn-ranking/'>
+        <router-link to='/w3vn-ranking/'>
           <img
-            class="nav-item"
-            src="../assets/tpscroll.jpg"
+            class="router-item"
+            src="../assets/tpscroll.png"
             alt="gplay-icon"
-            width="50px"
-            height="50px"
           />
           <span class="nav-items-text">Home Page</span>
-          </a>
+          </router-link>
        </li>
      <li>
         <a href="https://gplay.vn/trangchu" target="_blank">
@@ -74,7 +72,7 @@
         <li>
         <router-link to="/w3vn-ranking/dataladder">
           <img
-            class="nav-item"
+            class="router-item"
             src="../assets/statistics.png"
             alt="note-icon"
             width="50px"
@@ -97,6 +95,10 @@ export default {
 </script>
 
 <style scoped>
+.router-item{
+  width:50px;
+  height:50px;
+}
 .nav-menu {
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
