@@ -35,7 +35,7 @@
           <img
             class="nav-item"
             src="../assets/wc3-icon.png"
-            alt="note-icon"
+            alt="w3vnmap-icon"
             width="50px"
             height="50px"
           />
@@ -62,11 +62,23 @@
           <img
             class="router-item"
             src="../assets/statistics.png"
-            alt="note-icon"
+            alt="dataladder-icon"
             width="50px"
             height="50px"
           />
           <span class="nav-items-text">Data Ladder</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/w3vn-ranking/halloffame">
+          <img
+            class="router-item"
+            src="../assets/hof.png"
+            alt="hof-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Hall of Fame</span>
         </router-link>
       </li>
     </ul>

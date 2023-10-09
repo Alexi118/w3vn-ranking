@@ -17,6 +17,7 @@ console.log(raceStatistic)
 </script>
 
 <template>
+<div id="statistics-text">STATISTICS</div>
     <ul class="raceStats">
       <li v-for="race in raceStatistic" :key="race.id">{{ race.race }} {{ race.count }}</li>
     </ul>
@@ -29,9 +30,21 @@ console.log(raceStatistic)
  </script>
 
  <style>
+#statistics-text {
+  font-family: 'Eurostile MN', sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 210px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+  text-shadow: 3px 1px black;
+  letter-spacing: .05em;
+}
+
 .raceStats{
    text-align: center;
-   margin-top: 300px;
+   margin-top: 100px;
    color: white;
    font-size: xx-large;
    list-style-type: none;
