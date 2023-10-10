@@ -12,6 +12,30 @@
           <span class="nav-items-text">Home Page</span>
           </router-link>
        </li>
+       <li>
+        <router-link to="/w3vn-ranking/dataladder">
+          <img
+            class="router-item"
+            src="../assets/statistics.png"
+            alt="dataladder-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Data Ladder</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/w3vn-ranking/halloffame">
+          <img
+            class="router-item"
+            src="../assets/hof.png"
+            alt="hof-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Hall of Fame</span>
+        </router-link>
+      </li>
       <li>
         <a
           href="https://gplay.vn/congdong/warcraft-iii/huong-dan-tai-bo-max-fix-balance-w3vn-melee-patch-1.26?postId=8c6157c2-c040-4f86-9493-23caa6093259&groupId=6cd27c1d-4cf1-47a7-ba11-473cbbf8d23b"
@@ -56,30 +80,6 @@
           />
           <span class="nav-items-text">Replay Tool</span>
         </a>
-      </li>
-        <li>
-        <router-link to="/w3vn-ranking/dataladder">
-          <img
-            class="router-item"
-            src="../assets/statistics.png"
-            alt="dataladder-icon"
-            width="50px"
-            height="50px"
-          />
-          <span class="nav-items-text">Data Ladder</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/w3vn-ranking/halloffame">
-          <img
-            class="router-item"
-            src="../assets/hof.png"
-            alt="hof-icon"
-            width="50px"
-            height="50px"
-          />
-          <span class="nav-items-text">Hall of Fame</span>
-        </router-link>
       </li>
     </ul>
   </nav>
