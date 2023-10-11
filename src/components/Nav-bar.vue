@@ -1,6 +1,8 @@
 <template>
   <nav class="nav-menu">
-    <img class="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
+  <router-link to='/w3vn-ranking/'>
+        <img id="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
+  </router-link>  
     <ul>
       <li>
         <router-link to='/w3vn-ranking/'>
@@ -104,56 +106,51 @@ export default {
   display: flex;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  height: 150px;
   position: fixed;
 }
 
 .nav-menu ul {
   margin: 0;
   padding: 0;
-  height: 40px;
+  display: flex;
 }
 .nav-items-text {
   display: list-item;
 }
 
 .nav-menu li {
-  float: left;
+  text-align: center;
   list-style-type: none;
-
+  padding: 40px 10px;
   > a {
-    display: block;
     color: #f7ab06e1;
-    text-align: center;
-    padding: 38.9px;
     text-decoration: none;
   }
 }
 
-.nav-menu li a:hover {
+.nav-menu li:hover {
   background-color: #ffb502;
-  color: azure;
+  >a{
+    color: azure;
+  }
 }
 
-.w3vn-icon {
+#w3vn-icon {
   width: 150px;
-  height: 150.9px;
+  height: 150px;
 }
 
 @media only screen and (max-width: 425px) {
-  .w3vn-icon {
-    width: 100px;
-    height: 100px;
+   #w3vn-icon {
   }
 
   .nav-menu {
-    width: 600px;
-    height: 100px;
   }
 
   .nav-menu li {
-    > a {
-      padding: 20.1px 6px;
+     > a {
     }
   }
 }
