@@ -21,6 +21,7 @@ console.log(options[0].text)
          {{ option.text }}
       </option>
    </select>
+   </div>
    <div id="top3-box">
       <span id="tour-name">{{selected}}</span>
       <div class="top3" id="1st">
@@ -36,7 +37,6 @@ console.log(options[0].text)
          <span>{{options[0].third}}</span>
       </div>
    </div>
-   </div>
 </div>
 </template>
 
@@ -47,12 +47,16 @@ export default {
 </script>
 
  <style scoped>
-img{
-   width: 50px;
-   height: 50px;
+.top3 > img{
+   width: 40px;
+   height: 40px;
 }
-div .top3{
+.top3{
+   display:flex;
+   align-items: center;
+   font-size: 40px;
    margin: 10px;
+   background: linear-gradient(108deg, rgba(42, 42, 50, 1) 0%, rgba(42, 42, 50, 1) calc(100% - 400px), rgba(54, 54, 62, 1) calc(100% - 400px), rgba(54, 54, 62, 1) 100%);
 }
 
 #tour-name{
@@ -64,19 +68,17 @@ div .top3{
    font-size: 30px;
  }
 
- #event-selection-box{
-   color:#f7ab06e1;
+#event-selection-box{
    padding: 10px;
    >select{
       margin-left: 10px;
    }
  }
 
- #black-box-container{
-   display: table;
-   background-color: rgba(0, 0, 0, 0.9);
-   margin-left: auto;
-   margin-right: auto;
+#black-box-container{
+   display: block;
+   color: #f7aa06;
+   background-color: rgba(0, 0, 0, 0.8);
    width: 70%;
 }
  #hof-text {

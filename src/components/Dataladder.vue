@@ -34,7 +34,7 @@ console.log(raceStatistic)
  <style>
 #black-box-container{
    display: table;
-   background-color: rgba(0, 0, 0, 0.9);
+   background-color: rgba(0, 0, 0, 0.8);
    margin-left: auto;
    margin-right: auto;
    width: 70%;

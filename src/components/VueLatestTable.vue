@@ -357,7 +357,7 @@ const changePage = (page = currentPage.value) => {
   display: table;
   width: 70%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -385,6 +385,7 @@ const changePage = (page = currentPage.value) => {
   }
 
   .top3 {
+    align-items: center;
     width: 40px;
     height: 40px;
     margin-left: 10px;
@@ -422,8 +423,8 @@ const changePage = (page = currentPage.value) => {
     }
 
     .race {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
     }
 
     tbody tr td:nth-child(6) {
