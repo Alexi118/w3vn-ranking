@@ -1,14 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 
-const selected = ref('s1')
 const options = [
   { text: 'W3VN gplay season 1 - 1v1', value: 's1' , first: 'Pow', firstRace: 'HU', second: 'Fervis', secondRace: 'UD', third: 'Tix3', thirdRace: 'UD'},
   { text: 'W3VN gplay season 2 - 2v2', value: 's2' },
   { text: 'W3VN gplay season 3 - 1v1', value: 's3' }
 ]
-
-console.log(options[0].text)
+const selected = ref(options[0].text)
 </script>
 
 <template>
@@ -17,7 +15,7 @@ console.log(options[0].text)
    <div id="event-selection-box">
    <span>Select Event</span>
    <select v-model="selected">
-      <option v-for="option in options" :value="option.value">
+      <option v-for="option in options" :value="option.first">
          {{ option.text }}
       </option>
    </select>
@@ -26,7 +24,7 @@ console.log(options[0].text)
       <span id="tour-name">{{selected}}</span>
       <div class="top3" id="1st">
          <img src="../assets/1stplace.png"/>
-         <span>{{options[0].first}}</span>
+         <span>{{selected}}</span>
       </div>
       <div class="top3" id="2nd">
          <img src="../assets/2ndplace.png"/>
