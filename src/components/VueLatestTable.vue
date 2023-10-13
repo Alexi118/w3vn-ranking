@@ -217,7 +217,7 @@ const changePage = (page = currentPage.value) => {
       />
       <div id="lastUpdated">
         <div>Season I - Update:</div>
-        <div>10/9/2023 4:06PM</div>
+        <div>10/14/2023 12:21AM</div>
       </div>
     </div>
 
@@ -357,7 +357,7 @@ const changePage = (page = currentPage.value) => {
   display: table;
   width: 70%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -385,6 +385,7 @@ const changePage = (page = currentPage.value) => {
   }
 
   .top3 {
+    align-items: center;
     width: 40px;
     height: 40px;
     margin-left: 10px;
@@ -422,8 +423,8 @@ const changePage = (page = currentPage.value) => {
     }
 
     .race {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
     }
 
     tbody tr td:nth-child(6) {
@@ -523,13 +524,12 @@ const changePage = (page = currentPage.value) => {
 
 @media only screen and (min-width: 2000px) {
   #vueLatestTable {
-    font-family: Friz Quadrata;
-    display: table;
     width: 50%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
-    margin-left: auto;
-    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #vueLatestTable {
   }
 }
 </style>
