@@ -15,6 +15,16 @@
           </router-link>
        </li>
        <li>
+        <router-link to='/w3vn-ranking/tutorial'>
+          <img
+            class="router-item"
+            src="../assets/guide.png"
+            alt="gplay-icon"
+          />
+          <span class="nav-items-text">Book of Exp</span>
+          </router-link>
+       </li>
+       <!-- <li>
         <router-link to="/w3vn-ranking/dataladder">
           <img
             class="router-item"
@@ -24,6 +34,18 @@
             height="50px"
           />
           <span class="nav-items-text">Data Ladder</span>
+        </router-link>
+      </li> -->
+      <li>
+        <router-link to="/w3vn-ranking/media">
+          <img
+            class="router-item"
+            src="../assets/youtube.png"
+            alt="hof-icon"
+            width="50px"
+            height="50px"
+          />
+          <span class="nav-items-text">Youtube Clip</span>
         </router-link>
       </li>
       <li>
@@ -35,7 +57,7 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">Hall of Fame</span>
+          <span class="nav-items-text">Tournament</span>
         </router-link>
       </li>
       <li>
@@ -50,7 +72,7 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">W3VN Maps</span>
+          <span class="nav-items-text">W3VN Map</span>
         </a>
       </li>
       <li>
@@ -65,7 +87,7 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">W3VN Notes</span>
+          <span class="nav-items-text">W3VN Note</span>
         </a>
       </li>
       <li>

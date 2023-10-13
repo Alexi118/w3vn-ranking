@@ -15,7 +15,7 @@ const selected = ref(options[0].text)
    <div id="event-selection-box">
    <span>Select Event</span>
    <select v-model="selected">
-      <option v-for="option in options" :value="option.first">
+      <option v-for="option in options" :value="option.text">
          {{ option.text }}
       </option>
    </select>
@@ -24,7 +24,7 @@ const selected = ref(options[0].text)
       <span id="tour-name">{{selected}}</span>
       <div class="top3" id="1st">
          <img src="../assets/1stplace.png"/>
-         <span>{{selected}}</span>
+         <span>{{options[0].first}}</span>
       </div>
       <div class="top3" id="2nd">
          <img src="../assets/2ndplace.png"/>
