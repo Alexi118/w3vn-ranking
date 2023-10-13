@@ -108,7 +108,7 @@
     </li>
 </ul>
 </div>
-    <img id="four-race-img" src="../assets/4race.png" width="450" height="800"/>
+    <!-- <img id="four-race-img" src="../assets/4race.png" width="450" height="800"/> -->
 </div>
 </div>
 </template>
