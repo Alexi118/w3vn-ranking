@@ -64,7 +64,7 @@ a {
    display: block;
    color: #f7aa06;
    background-color: rgba(0, 0, 0, 0.8);
-   width: 80%;
+   width: 70%;
    padding: 5px;
 }
 </style>

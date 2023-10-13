@@ -1,10 +1,11 @@
 <template>
 <div id="guide-text">Book of Expericene</div>
 <div id="black-box-container">
-<h1>Nơi lưu trữ các video học chơi Warcraft III Melee bằng tiếng Việt</h1>
+    <h1>Video học chơi Warcraft III Melee bằng tiếng Việt</h1>
+<div id="content-box">      
+<div id="text-box">
 <ul>
     <h2>Kiến thức chung của game</h2>
-    <img src="../assets/explorer.png"/>
     <li>
         <span>Sử dụng hotkey Tool AucT (Xem từ 8ph) - </span>
         <a target="_blank" href="https://www.youtube.com/live/sFn5wYOi5BI?si=B-Ljy_asg7opZTSI&t=480">link youtube</a>
@@ -54,7 +55,6 @@
             </li>
         </ul>
     </li>
-    <img src="../assets/explorer.png"/>
     <li>
         <h3>Build order Human cơ bản</h3>
         <ul>
@@ -108,6 +108,9 @@
     </li>
 </ul>
 </div>
+    <img id="four-race-img" src="../assets/4race.png" width="450" height="800"/>
+</div>
+</div>
 </template>
 
 <script>
@@ -120,16 +123,14 @@ export default {
 </script>
 
 <style scoped>
-li{
-    display: fle;
-}
-
-img{
-    float:right;
-    margin-right: 15px;
+#four-race-img{
+    width: auto;
+    float: right;
+    margin-right: 40px;
 }
 
 h1{
+    display: block;
     text-align: center;
 }
 
@@ -150,11 +151,23 @@ a {
   letter-spacing: .05em;
 }
 
+#text-box{
+    width: 100%;
+}
+
+#content-box{
+    display: flex;
+}
+
 #black-box-container{
    display: block;
    color: #f7aa06;
    background-color: rgba(0, 0, 0, 0.8);
-   width: 80%;
+   width: 70%;
    padding: 5px;
+}
+
+@media only screen and (min-width: 2000px) {
+
 }
 </style>

@@ -524,13 +524,12 @@ const changePage = (page = currentPage.value) => {
 
 @media only screen and (min-width: 2000px) {
   #vueLatestTable {
-    font-family: Friz Quadrata;
-    display: table;
     width: 50%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.9);
-    margin-left: auto;
-    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #vueLatestTable {
   }
 }
 </style>
