@@ -57,9 +57,9 @@ export default {
 
 @media only screen and (max-width: 425px) {
   #w3nladder-text {
-    /* margin-left: 100px;
-    display: flex;
-    overflow: inherit; */
+  }
+  #VueLatestTable{
+    overflow: scroll;
   }
 }
 </style>
