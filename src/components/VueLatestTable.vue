@@ -217,7 +217,7 @@ const changePage = (page = currentPage.value) => {
       />
       <div id="lastUpdated">
         <div>Season I - Update:</div>
-        <div>10/14/2023 12:21AM</div>
+        <div>10/15/2023 1:46AM</div>
       </div>
     </div>
 
@@ -519,12 +519,6 @@ const changePage = (page = currentPage.value) => {
     color: #f7aa06;
     text-align: center;
     margin: 20px 0;
-  }
-}
-
-@media only screen and (min-width: 2000px) {
-  #vueLatestTable {
-    width: 50%;
   }
 }
 

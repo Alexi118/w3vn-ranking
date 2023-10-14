@@ -45,7 +45,7 @@
             width="50px"
             height="50px"
           />
-          <span class="nav-items-text">Youtube Clip</span>
+          <span class="nav-items-text">Youtube VOD</span>
         </router-link>
       </li>
       <li>
@@ -146,6 +146,7 @@ export default {
   text-align: center;
   list-style-type: none;
   padding: 40px 10px;
+  width: 110px;
   > a {
     color: #f7ab06e1;
     text-decoration: none;
@@ -165,15 +166,8 @@ export default {
 }
 
 @media only screen and (max-width: 425px) {
-   #w3vn-icon {
-  }
-
-  .nav-menu {
-  }
-
-  .nav-menu li {
-     > a {
-    }
+  ul{
+    overflow: scroll;
   }
 }
 </style>
