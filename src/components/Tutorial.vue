@@ -168,6 +168,12 @@ a {
 }
 
 @media only screen and (min-width: 2000px) {
+  #black-box-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
 
 }
 </style>

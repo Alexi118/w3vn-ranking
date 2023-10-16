@@ -67,4 +67,12 @@ a {
    width: 70%;
    padding: 5px;
 }
+
+@media only screen and (min-width: 2000px) {
+  #black-box-container {
+    width: 50%;
+  }
+}
+
+
 </style>
