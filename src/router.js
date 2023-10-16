@@ -9,23 +9,23 @@ import Error from './components/Error.vue'
 
 const routes = [
     {
-        path: '/w3vn-ranking/',
+        path: '/',
         component: Home
     },
     {
-        path: '/w3vn-ranking/tutorial',
+        path: '/tutorial',
         component: Tutorial
     },
     {
-        path: '/w3vn-ranking/media',
+        path: '/media',
         component: Media
     },
     {
-        path: '/w3vn-ranking/dataladder',
+        path: '/dataladder',
         component: DataLadder
     },
     {
-        path: '/w3vn-ranking/halloffame',
+        path: '/halloffame',
         component: HallofFame
     },
     {
