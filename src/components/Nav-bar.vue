@@ -1,11 +1,11 @@
 <template>
   <nav class="nav-menu">
-  <router-link to='/w3vn-ranking/'>
+  <router-link to='/'>
         <img id="w3vn-icon" src="/src/assets/w3n-hu-king.jpg" alt="w3vn-icon" />
   </router-link>  
     <ul>
       <li>
-        <router-link to='/w3vn-ranking/'>
+        <router-link to='/'>
           <img
             class="router-item"
             src="../assets/tpscroll.png"
@@ -15,7 +15,7 @@
           </router-link>
        </li>
        <li>
-        <router-link to='/w3vn-ranking/tutorial'>
+        <router-link to='/tutorial'>
           <img
             class="router-item"
             src="../assets/guide.png"
@@ -25,7 +25,7 @@
           </router-link>
        </li>
        <!-- <li>
-        <router-link to="/w3vn-ranking/dataladder">
+        <router-link to="/dataladder">
           <img
             class="router-item"
             src="../assets/statistics.png"
@@ -37,7 +37,7 @@
         </router-link>
       </li> -->
       <li>
-        <router-link to="/w3vn-ranking/media">
+        <router-link to="/media">
           <img
             class="router-item"
             src="../assets/youtube.png"
@@ -49,7 +49,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/w3vn-ranking/halloffame">
+        <router-link to="/halloffame">
           <img
             class="router-item"
             src="../assets/hof.png"
