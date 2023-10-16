@@ -165,7 +165,7 @@ export default {
   height: 150px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
   ul{
     overflow: scroll;
   }

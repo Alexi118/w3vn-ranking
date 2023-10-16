@@ -55,11 +55,12 @@ export default {
   letter-spacing: .05em;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
   #w3nladder-text {
   }
   #VueLatestTable{
-    overflow: scroll;
+    max-width: 425px;
+    overflow-x: scroll;
   }
 }
 </style>

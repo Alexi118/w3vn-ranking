@@ -90,4 +90,10 @@ export default {
   text-shadow: 3px 1px black;
   letter-spacing: .05em;
 }
+
+@media only screen and (min-width: 2000px) {
+  #black-box-container {
+    width: 50%;
+  }
+}
 </style>
