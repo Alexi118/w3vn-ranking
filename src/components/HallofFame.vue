@@ -1,12 +1,33 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
-const options = [
-  { text: 'W3VN gplay season 1 - 1v1', value: 's1' , first: 'Pow', firstRace: 'HU', second: 'Fervis', secondRace: 'UD', third: 'Tix3', thirdRace: 'UD'},
-  { text: 'W3VN gplay season 2 - 2v2', value: 's2' },
-  { text: 'W3VN gplay season 3 - 1v1', value: 's3' }
+const data = [
+  { value: 's1' , first: 'Pow', firstRace: 'HU'},
+  { value: 's2', first: 'Fervis', secondRace: 'UD'},
+  { value: 's3', first: 'Tix3', thirdRace: 'UD' }
 ]
-const selected = ref(options[0].text)
+
+const options = [{ text: "W3VN gplay season 1 - 1v1", value: "s1" },{ text: "W3VN gplay season 2 - 2v2", value: "s2" },{ text: "W3VN gplay season 3 - 1v1", value: "s3" }]
+
+// const selected = ref(options[0].text)
+
+const tourFilter = (arr, value) => {
+  value = String(value).toLowerCase();
+  if (value === "s1") {
+    return arr.filter((o) =>
+      Object.entries(o).some((entry) => String(entry[1]) == "s1")
+    );
+  }
+}
+
+watch(
+  () => options.value,
+  (newData, _oldData) => {
+    tourFilter(data, newData);
+    console.log(options.value)
+  }
+);
+
 </script>
 
 <template>
@@ -15,24 +36,25 @@ const selected = ref(options[0].text)
    <div id="event-selection-box">
    <span>Select Event</span>
    <select v-model="selected">
-      <option v-for="option in options" :value="option.text">
+      <option disabled value="">Select a tournament</option>
+      <option v-for="option in options" :value="data.value">
          {{ option.text }}
       </option>
    </select>
    </div>
    <div id="top3-box">
-      <span id="tour-name">{{selected}}</span>
+      <!-- <span id="tour-name">{{selected}}</span> -->
       <div class="top3" id="1st">
          <img src="../assets/1stplace.png"/>
-         <span>{{options[0].first}}</span>
+         <span>{{data.first}}</span>
       </div>
       <div class="top3" id="2nd">
          <img src="../assets/2ndplace.png"/>
-         <span>{{options[0].second}}</span>
+         <!-- <span>{{options[0].second}}</span> -->
       </div>
       <div class="top3" id="3rd">
          <img src="../assets/3rdplace.png"/>
-         <span>{{options[0].third}}</span>
+         <!-- <span>{{options[0].third}}</span> -->
       </div>
    </div>
 </div>
@@ -46,8 +68,8 @@ export default {
 
  <style scoped>
 .top3 > img{
-   width: 40px;
-   height: 40px;
+   width: 30px;
+   height: 30px;
 }
 .top3{
    display:flex;
