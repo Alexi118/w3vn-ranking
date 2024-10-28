@@ -11,7 +11,7 @@
             src="../assets/tpscroll.png"
             alt="gplay-icon"
           />
-          <span class="nav-items-text">Home Page</span>
+          <span class="nav-items-text">Live Stream</span>
           </router-link>
        </li>
        <li>
