@@ -62,7 +62,7 @@
       </li> -->
       <li>
         <a
-          href="https://gplay.vn/congdong/warcraft-iii/huong-dan-tai-bo-max-fix-balance-w3vn-melee-patch-1.26?postId=8c6157c2-c040-4f86-9493-23caa6093259&groupId=6cd27c1d-4cf1-47a7-ba11-473cbbf8d23b"
+          href="https://drive.google.com/drive/folders/1h6u5yeERHCoYOCekVozZO7wGMRbnNwZ_"
           target="_blank"
         >
           <img
@@ -92,7 +92,7 @@
       </li>
       <li>
         <a
-          href="https://drive.google.com/file/d/1QQAmwBKNsApNzEbk-jJEWQ1v9mSRv7UF/view?usp=drive_link"
+          href="https://wc3stats.com/upload"
           target="_blank"
         >
           <img
